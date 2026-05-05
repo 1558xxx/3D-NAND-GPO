@@ -1,146 +1,229 @@
 # 3D-NAND-GPO
 
-## Spatio-Temporal Few-Shot Learning via Diffusive Neural Network Generation
+3D NAND flash parameter regression and parameter generation pipeline built on top of the original GPD codebase.
 
-![model framework](assets/framework.png "Model Architecture")
+This repository has been adapted from the original spatio-temporal GPD framework to a 3D NAND setting. The active workflow is no longer traffic or crowd-flow forecasting. Instead, it focuses on:
 
-The official implementation of the ICLR 2024 paper entitled "Spatio-Temporal Few-Shot Learning via Diffusive Neural Network Generation". 
+- supervised regression from process and device features to target frequency
+- parameter-vector extraction from the regression model
+- diffusion-based generation of model parameters under NAND conditions
+- optional fine-tuning from generated parameters
 
-In this project, we propose a novel framework, GPD, which performs generative pre-training on a collection of model parameters optimized with data from source cities. Our proposed approach recasts spatio-temporal graph transfer learning as pre-training a generative hypernetwork, which generates tailored model parameters guided by prompts. 
-Our framework has the potential to revolutionize smart city applications in data-scarce environments and contribute to more sustainable and efficient urban development.
+## Overview
 
-## Installation
-### Environment
-- Tested OS: Linux
-- Python >= 3.8
-- torch == 1.12.0
-- torch_geometric == 2.2.0
-- Tensorboard
+The current 3D NAND workflow uses these inputs:
 
-### Dependencies:
-1. Install Pytorch with the correct CUDA version.
-2. Use the ``pip install -r requirements.txt`` command to install all of the Python modules and packages used in this project.
+- features: `步长`, `WL`, `Retention`, `PEC`
+- target: `频数`
 
-<!--
-## Requirements
-- accelerate==0.23.0
-- einops==0.7.0
-- ema_pytorch==0.2.3
-- matplotlib==3.5.3
-- numpy==1.23.2
-- PyYAML==6.0.1
-- PyYAML==6.0.1
-- scikit_learn==1.1.2
-- scipy==1.9.1
-- torch==1.12.0+cu113
-- torch_geometric==2.2.0
-- torchsummary==1.5.1
-- tqdm==4.64.0
-- xlrd==2.0.1
-- xlwt==1.3.0
--->
+The migration includes these core changes:
 
-## Data
-The data used for training and evaluation can be found in [Time-Series data](https://drive.google.com/drive/folders/1dI6sV67LxBrksnBdYputnB3rrIeqYzRR?usp=sharing).
-After downloading the data, move them to ./Data.
+- `Pretrain/datasets.py` now reads CSV data, builds `DataLoader`s, and reshapes inputs to `(N, 1, 4)`
+- `Pretrain/Models/mlp_model.py` defines the regression backbone as `4 -> 64 -> 32 -> 1`
+- `Pretrain/main.py` trains or fine-tunes the regression model with `nn.MSELoss` and `Adam(lr=1e-4)`
+- parameter extraction and parameter loading use `torch.nn.utils.parameters_to_vector` and `vector_to_parameters`
+- diffusion conditioning removes KG embeddings and uses:
+  - `WL` as an embedding
+  - `Retention` normalized to `[-1, 1]`
+  - `PEC` normalized to `[-1, 1]`
+- transformer conditioning is injected by concatenating the condition vector to the noisy parameter tokens
 
-For each city, we provide the following data:
-- ``Graph data``: It records the adjacency matrix of the spatiotemporal graph. 
-- ``Time series data``: It records the temporal sequential data for each node.
+## Active Files
 
-We provide two time-series datasets: crowd flow (including DC, BM, man) and traffic speed (including metr-la, pems-bay, shenzhen, chengdu_m).
+The main 3D NAND path is:
 
-The details of these two data sets are as follows:
+- `Pretrain/config.yaml`
+- `Pretrain/datasets.py`
+- `Pretrain/main.py`
+- `Pretrain/Models/mlp_model.py`
+- `Pretrain/PrepareParams/model2tensor.py`
+- `GPD/datapreparing.py`
+- `GPD/1Dmain.py`
+- `GPD/TimeTransformer/transformer.py`
+- `GPD/denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py`
 
-<img src="assets/datasets-info.png" alt="datasets information" title="datasets information" style="zoom:67%;" />
+Some legacy graph-model files from the upstream project are still present for reference, but they are not part of the active 3D NAND pipeline.
 
+## Project Structure
 
-## Model Training
-
-To train node-level models with the traffic dataset, run:
-
-``cd Pretrain``
-
-``CUDA_VISIBLE_DEVICES=0 python main.py --taskmode task4 --model v_GWN --test_data metr-la --ifnewname 1 --aftername TrafficData``
-
-After full-trained, run Pretrain\PrepareParams\model2tensor.py to extract parameters from the trained model. And put the params-dataset in ./Data.
-
-To train diffusion model and generate the parameters of the target city:
-
-``cd GPD``
-
-``CUDA_VISIBLE_DEVICES=0 python 1Dmain.py --expIndex 140 --targetDataset metr-la --modeldim 512 --epochs 80000 --diffusionstep 500 --basemodel v_GWN  --denoise Trans1``
-
-- ``expIndex`` assigns a special number to the experiment.
-- ``targetDataset`` specifies the target dataset, which can be selected from ['DC', 'BM', 'man', 'metr-la', 'pemes-bay', 'shenzhen', 'chengdu_m'].
-- ``modeldim`` specifies the hidden dim of the Transformer.
-- ``epochs`` specifies the number of iterations.
-- ``diffusionstep`` specifies the total steps of the diffusion process.
-- ``basemodel`` specifies the spatio-temporal graph model, which can be selected from ['v_STGCN5', 'v_GWN'].
-- ``denoise model`` specifies the conditioning strategies, which can be selected from ['Trans1', 'Trans2', 'Trans3', 'Trans4', 'Trans5'].
-  - Trans1: Pre-conditioning with inductive bias.
-  - Trans2: Pre-conditioning.
-  - Trans3: Pre-adaptive conditioning.
-  - Trans4: Post-adaptive Conditioning.
-  - Trans5: Adaptive norm conditioning.
-
-![conditioning](assets/condition.png "Conditioning Strategies")
-
-The sample result is in GPD/Output/expXX/.
-
-## Finetune and Evaluate
-To finetune the generated parameters of the target city and evaluate, run:
-
-``cd Pretrain``
-
-``CUDA_VISIBLE_DEVICES=0 python main.py --taskmode task7 --model v_GWN --test_data metr-la --ifnewname 1 --aftername finetune_7days --epochs 600 --target_days 7``
-
-  - ``taskmode`` 'task7' means finetune after diffusion sampling.
-  - ``model`` specifies the spatio-temporal graph model, which can be selected from ['v_STGCN5', 'v_GWN'].
-  - ``test_data`` specifies the dataset, which can be selected from ['DC', 'BM', 'man', 'metr-la', 'pemes-bay', 'shenzhen', 'chengdu_m'].
-  - ``ifnewname`` assign 1 to better distinguish the results of the current experiment.
-  - ``aftername`` Use with --ifnewname 1 to give an identification name to the log file and results folder of the current experiment.
-  - ``epochs`` specifies the number of iterations.
-  - ``target_days`` specifies the amount of data used in finetune stage.
-
-## Overall instructions
-Let me give an example of the overall instructions. If you want to set 'metr-la' as target city:
-
- - In pretrain: set the ``test_data`` as 'PMS-Bay', 'Didi-Chengdu', and 'Didi-Shenzhen' respectively to pretrain the models of other three source cities.
- - In Diffusion: set the ``targetDataset`` as 'metr-la'.
- - In finetune: set the ``test_dataset`` as 'metr-la'.
-
-Since finetune and pretraining share the same code framework and use the same set of parameter names, this can be a little confusing and I will try to make the distinction between them in later versions of the code.
-
-## Citing(BibTeX):
-```bibtex
-@inproceedings{
-  yuan2024spatiotemporal,
-  title={Spatio-Temporal Few-Shot Learning via Diffusive Neural Network Generation},
-  author={Yuan Yuan and Chenyang Shao and Jingtao Ding and Depeng Jin and Yong Li},
-  booktitle={The Twelfth International Conference on Learning Representations},
-  year={2024},
-  url={https://openreview.net/forum?id=QyFm3D3Tzi}
-}
+```text
+GPD-master/
+|-- Data/
+|-- Pretrain/
+|   |-- Models/
+|   |   `-- mlp_model.py
+|   |-- PrepareParams/
+|   |   `-- model2tensor.py
+|   |-- config.yaml
+|   |-- datasets.py
+|   `-- main.py
+|-- GPD/
+|   |-- 1Dmain.py
+|   |-- datapreparing.py
+|   |-- TimeTransformer/
+|   `-- denoising_diffusion_pytorch/
+|-- assets/
+|-- requirements.txt
+`-- README.md
 ```
 
-<!--
-## Model training & Evaluating
-- We integrate the zeroshot evaluation module into the diffusion.
-- Args Optional parameters：
-  - expIndex：Assign a special number to the experiment.
-  - targetDataset: The target dataset, can be selected from ['DC', 'BM', 'man', 'metr-la', 'pemes-bay', 'shenzhen', 'chengdu_m'].
-  - modeldim: Transformer hidden dim.
-  - epochs: Number of batches in diffusion learning.
-  - diffusionstep: Steps of diffusion.
-  - basemodel: can select from ['v_STGCN5', 'v_GWN'].
-  - denoise model: Several implementations of transformer, the main difference between them is the use of conditions. Can be selected from ['Trans1', 'Trans2', 'Trans3', 'Trans4', 'Trans5'].
-    - Trans1: Ordinary transformer, the kg embedding is added to the parameter section associated with the space.
-    - Trans2: Conditions are added to each layer of transformer.
-    - Trans3: After the conditions are aggregated, they are added to each layer of transformer.
-    - Trans4: Cross attention.
-    - Trans5: Adaptive LayerNorm.
+## Environment
+
+- Python >= 3.8
+- PyTorch
+- pandas
+- scikit-learn
+- PyYAML
+- accelerate
+- einops
+- ema-pytorch
+- tqdm
+
+Install dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Data Format
+
+The default regression config points to:
+
+```text
+Data/nand_regression.csv
+```
+
+The CSV should contain at least these columns:
+
+```text
+步长, WL, Retention, PEC, 频数
+```
+
+Notes:
+
+- `Retention` and `PEC` are normalized independently and their scalers are saved for reuse
+- `WL` is also mapped to an index vocabulary for diffusion conditioning
+- generated artifacts are written under `Pretrain/artifacts/`
+
+## Default Regression Config
+
+`Pretrain/config.yaml` is configured for:
+
+- `features: 4`
+- `target_dim: 1`
+- `batch_size: 32`
+- `scale: true`
+- `hidden_dims: [64, 32]`
+- `in_dim: 4`
+- `out_dim: 1`
+- `num_nodes: 1`
+
+## Workflow
+
+### 1. Train the MLP regressor
+
+From the repository root:
+
+```bash
+cd Pretrain
+python main.py --mode train
+```
+
+This will:
+
+- read the CSV specified in `Pretrain/config.yaml`
+- split the dataset into train/val/test
+- train the MLP regressor
+- save the best checkpoint
+- export a parameter vector for the trained model
+
+Main outputs:
+
+- `Pretrain/artifacts/mlp_regressor.pt`
+- `Pretrain/artifacts/mlp_regressor_params.npy`
+- `Pretrain/artifacts/processed_conditions.csv`
+- `Pretrain/artifacts/retention_scaler.pkl`
+- `Pretrain/artifacts/pec_scaler.pkl`
+- `Pretrain/artifacts/wl_vocab.json`
+
+### 2. Collect parameter vectors for diffusion training
+
+If you have multiple checkpoints and want to build a parameter dataset:
+
+```bash
+cd Pretrain
+python PrepareParams/model2tensor.py --checkpoint_dir ./artifacts --output_path ./PrepareParams/model_params.npy
+```
+
+This stacks model parameters into a 2D array of shape:
+
+```text
+(num_models, parameter_dim)
+```
+
+### 3. Train the diffusion model
+
+From the repository root:
+
 ```bash
 cd GPD
-CUDA_VISIBLE_DEVICES=3 python 1Dmain.py --expIndex 140 --targetDataset metr-la --modeldim 512 --epochs 80000 --diffusionstep 500 --basemodel v_GWN  --denoise Trans1
--->
+python 1Dmain.py --expIndex 888 --epochs 20000 --diffusionstep 500 --denoise Trans3
+```
+
+By default, this script reads:
+
+- parameter vectors from `../Pretrain/PrepareParams/model_params.npy`
+- processed condition CSV from `../Pretrain/artifacts/processed_conditions.csv`
+- saved scalers and `WL` vocabulary from `../Pretrain/artifacts/`
+
+Condition construction is:
+
+- `WL -> nn.Embedding(num_wl, 8)`
+- `Retention -> normalized to [-1, 1]`
+- `PEC -> normalized to [-1, 1]`
+
+The final condition vector is:
+
+```text
+[WL_embedding, Retention_norm, PEC_norm]
+```
+
+Generated samples are saved to:
+
+```text
+GPD/Output/sampleSeq_RealParams_<expIndex>.npy
+```
+
+### 4. Fine-tune from generated parameters
+
+After diffusion sampling:
+
+```bash
+cd Pretrain
+python main.py --mode finetune --diffusion_sample_path ../GPD/Output/sampleSeq_RealParams_888.npy
+```
+
+Optional arguments:
+
+- `--sample_index`: choose which generated parameter vector to load when the `.npy` file contains multiple samples
+- `--epochs`: override the epoch count from `config.yaml`
+
+## Notes
+
+- Large data files, `*.npy`, model weights, logs, and outputs are ignored by `.gitignore` by default
+- The repository currently tracks code and lightweight assets only
+- If you want to version large datasets or checkpoints, use Git LFS instead of ordinary Git
+
+## Migration Summary
+
+Compared with the original upstream GPD repository, this version changes the problem formulation from graph forecasting to 3D NAND regression:
+
+- graph-structured time-series input has been replaced by tabular NAND features
+- the backbone is now a lightweight MLP regressor
+- KG conditioning has been removed
+- diffusion conditions now depend on `WL`, `Retention`, and `PEC`
+- parameter serialization is handled through official PyTorch vector utilities
+
+## Acknowledgment
+
+This repository is adapted from the original GPD project and reworked for a 3D NAND flash parameter-regression and parameter-generation workflow.
