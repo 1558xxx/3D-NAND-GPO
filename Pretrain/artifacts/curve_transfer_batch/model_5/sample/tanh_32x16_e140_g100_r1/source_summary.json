@@ -1,0 +1,8 @@
+{
+  "source_task_count": 150,
+  "parameter_dim": 609,
+  "mean_train_mse": 2351.952830950419,
+  "mean_train_rmse": 42.6500163380305,
+  "mean_train_mae": 20.74963973283768,
+  "mean_train_r2": 0.9981264786261661
+}

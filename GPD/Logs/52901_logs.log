@@ -1,0 +1,7 @@
+2026-05-06 21:00:13: begin training
+
+eval:
+eval sampling: generating 20 samples in one chunk
+best result! in epoch 50
+metric sum: 1.4456019401550293
+final sampling: generating 20 samples in one chunk

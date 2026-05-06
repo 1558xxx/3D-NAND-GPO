@@ -1,0 +1,21 @@
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_6.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 298607,
+  "source_num_points_mean": 23.201349431818183,
+  "target_num_points_mean": 24.279711174242426,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}

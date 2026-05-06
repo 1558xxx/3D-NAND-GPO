@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import torch
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from torch.utils.data import DataLoader, Dataset
 
 
@@ -91,6 +91,23 @@ def _fit_or_load_scalers(frame, scale, retention_scaler_path, pec_scaler_path):
     return retention_scaler, pec_scaler
 
 
+def _fit_feature_scaler(frame, feature_columns, feature_scaler_path=None, feature_scale_method="standard"):
+    if not feature_scaler_path or feature_scale_method in {None, "", "none"}:
+        return None
+
+    scaler_path = _resolve_path(feature_scaler_path)
+    if feature_scale_method == "standard":
+        scaler = StandardScaler()
+    elif feature_scale_method == "minmax":
+        scaler = MinMaxScaler(feature_range=(-1, 1))
+    else:
+        raise ValueError("Unsupported feature_scale_method: {}".format(feature_scale_method))
+
+    scaler.fit(frame[feature_columns])
+    _save_pickle(scaler, scaler_path)
+    return scaler
+
+
 def preprocess_dataframe(
     csv_path,
     feature_columns=None,
@@ -100,6 +117,8 @@ def preprocess_dataframe(
     pec_scaler_path="artifacts/pec_scaler.pkl",
     wl_vocab_path="artifacts/wl_vocab.json",
     processed_csv_path=None,
+    feature_scaler_path=None,
+    feature_scale_method="standard",
 ):
     feature_columns = feature_columns or FEATURE_COLUMNS
     frame = pd.read_csv(_resolve_path(csv_path)).copy()
@@ -126,12 +145,23 @@ def preprocess_dataframe(
     wl_mapping = {str(value): index for index, value in enumerate(wl_values)}
     processed["WL_index"] = frame["WL"].astype(str).map(wl_mapping).astype(np.int64)
 
+    feature_scaler = _fit_feature_scaler(
+        frame=frame,
+        feature_columns=feature_columns,
+        feature_scaler_path=feature_scaler_path,
+        feature_scale_method=feature_scale_method,
+    )
+
     if processed_csv_path:
         processed_path = _resolve_path(processed_csv_path)
         processed_path.parent.mkdir(parents=True, exist_ok=True)
         processed.to_csv(processed_path, index=False, encoding="utf-8-sig")
 
-    features = processed[feature_columns].to_numpy(dtype=np.float32)
+    feature_frame = frame[feature_columns].to_numpy(dtype=np.float32)
+    if feature_scaler is not None:
+        feature_frame = feature_scaler.transform(feature_frame).astype(np.float32)
+
+    features = feature_frame
     features = np.expand_dims(features, axis=1)
     targets = processed[[target_column]].to_numpy(dtype=np.float32)
     conditions = np.column_stack(
@@ -146,6 +176,7 @@ def preprocess_dataframe(
         "frame": processed,
         "retention_scaler": retention_scaler,
         "pec_scaler": pec_scaler,
+        "feature_scaler": feature_scaler,
         "wl_values": wl_values,
         "conditions": conditions,
     }
@@ -193,6 +224,8 @@ def build_dataloaders(
     pec_scaler_path="artifacts/pec_scaler.pkl",
     wl_vocab_path="artifacts/wl_vocab.json",
     processed_csv_path=None,
+    feature_scaler_path=None,
+    feature_scale_method="standard",
 ):
     features, targets, metadata = preprocess_dataframe(
         csv_path=csv_path,
@@ -203,6 +236,8 @@ def build_dataloaders(
         pec_scaler_path=pec_scaler_path,
         wl_vocab_path=wl_vocab_path,
         processed_csv_path=processed_csv_path,
+        feature_scaler_path=feature_scaler_path,
+        feature_scale_method=feature_scale_method,
     )
 
     train_indices, val_indices, test_indices = _split_indices(

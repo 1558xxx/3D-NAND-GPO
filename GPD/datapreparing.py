@@ -30,7 +30,7 @@ def _normalize_conditions(frame, retention_scaler_path, pec_scaler_path, wl_voca
     required_columns = ["WL", "Retention", "PEC"]
     missing = [column for column in required_columns if column not in frame.columns]
     if missing:
-        raise KeyError("条件 CSV 缺少必要列: {}".format(", ".join(missing)))
+        raise KeyError("Condition CSV is missing required columns: {}".format(", ".join(missing)))
 
     retention_scaler = _load_pickle(retention_scaler_path)
     pec_scaler = _load_pickle(pec_scaler_path)
@@ -39,7 +39,7 @@ def _normalize_conditions(frame, retention_scaler_path, pec_scaler_path, wl_voca
     wl_indices = frame["WL"].astype(str).map(wl_mapping)
     if wl_indices.isnull().any():
         unknown_values = frame.loc[wl_indices.isnull(), "WL"].drop_duplicates().tolist()
-        raise ValueError("WL 中存在未登录值: {}".format(unknown_values))
+        raise ValueError("Found WL values that are not in the saved vocabulary: {}".format(unknown_values))
 
     retention_norm = retention_scaler.transform(frame[["Retention"]]).astype(np.float32).reshape(-1)
     pec_norm = pec_scaler.transform(frame[["PEC"]]).astype(np.float32).reshape(-1)
@@ -65,9 +65,24 @@ def _load_parameter_sequences(parameter_path):
     elif params.ndim == 3:
         params = params.reshape(params.shape[0], 1, -1)
     else:
-        raise ValueError("参数张量维度不支持: {}".format(params.shape))
+        raise ValueError("Unsupported parameter tensor shape: {}".format(params.shape))
 
     return params
+
+
+def _align_parameter_rows(params, target_rows):
+    current_rows = int(params.shape[0])
+    target_rows = int(target_rows)
+
+    if current_rows == target_rows:
+        return params
+
+    if current_rows == 1 and target_rows > 1:
+        return np.repeat(params, target_rows, axis=0)
+
+    raise ValueError(
+        "Parameter sample count does not match condition count: {} vs {}".format(current_rows, target_rows)
+    )
 
 
 def datapreparing(
@@ -88,14 +103,7 @@ def datapreparing(
         pec_scaler_path=pec_scaler_path,
         wl_vocab_path=wl_vocab_path,
     )
-
-    if train_parameters.shape[0] != train_condition.shape[0]:
-        raise ValueError(
-            "训练参数样本数与条件样本数不一致: {} vs {}".format(
-                train_parameters.shape[0],
-                train_condition.shape[0],
-            )
-        )
+    train_parameters = _align_parameter_rows(train_parameters, train_condition.shape[0])
 
     repeat_num = max(int(repeat_num), 1)
     if repeat_num > 1:
@@ -116,6 +124,9 @@ def datapreparing(
         gen_target = _load_parameter_sequences(sample_target_param_path)
     elif _resolve_path(sample_condition_csv) == _resolve_path(train_condition_csv):
         gen_target = _load_parameter_sequences(train_param_path)
+
+    if gen_target is not None:
+        gen_target = _align_parameter_rows(gen_target, sample_condition.shape[0])
 
     metadata = {
         "num_wl": num_wl,

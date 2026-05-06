@@ -59,6 +59,7 @@ class ConditionedParameterTransformer(nn.Module):
         self._d_model = d_model
         self.layernum = layernum
         self.channels = d_input
+        self.self_condition = False
         self.condition_dim = wl_embedding_dim + 2
         self.wl_embedding = nn.Embedding(num_wl, wl_embedding_dim)
 

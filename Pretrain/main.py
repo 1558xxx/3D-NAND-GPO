@@ -7,8 +7,15 @@ import numpy as np
 import torch
 import torch.nn as nn
 import yaml
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from torch.nn.utils import parameters_to_vector, vector_to_parameters
 
+from curve_task_workflow import (
+    finetune_target_domain_models,
+    prepare_curve_domains,
+    run_curve_transfer_full_pipeline,
+    train_source_domain_models,
+)
 from datasets import build_dataloaders
 from Models import MLPRegressor
 
@@ -29,6 +36,7 @@ def load_local_config(config_filename):
         config = yaml.full_load(handle)
 
     base_dir = config_path.parent
+    config["_config_dir"] = str(base_dir)
     data_config = config.get("data", {})
     train_config = config.get("train", {})
 
@@ -36,6 +44,7 @@ def load_local_config(config_filename):
         "csv_path",
         "retention_scaler_path",
         "pec_scaler_path",
+        "feature_scaler_path",
         "wl_vocab_path",
         "processed_csv_path",
         "artifacts_dir",
@@ -61,6 +70,7 @@ def build_model(model_config):
         in_dim=model_config.get("in_dim", 4),
         hidden_dims=tuple(model_config.get("hidden_dims", [64, 32])),
         out_dim=model_config.get("out_dim", 1),
+        activation=model_config.get("activation", "relu"),
     )
 
 
@@ -119,6 +129,30 @@ def evaluate(model, dataloader, criterion, device):
     return metrics
 
 
+def summarize_regression_metrics(metrics):
+    predictions = metrics.get("predictions")
+    targets = metrics.get("targets")
+    if predictions is None or targets is None or len(predictions) == 0:
+        return {
+            "loss": metrics.get("loss"),
+            "mse": None,
+            "rmse": None,
+            "mae": None,
+            "r2": None,
+        }
+
+    y_pred = np.asarray(predictions).reshape(-1)
+    y_true = np.asarray(targets).reshape(-1)
+    mse = mean_squared_error(y_true, y_pred)
+    return {
+        "loss": float(metrics.get("loss")),
+        "mse": float(mse),
+        "rmse": float(mean_squared_error(y_true, y_pred, squared=False)),
+        "mae": float(mean_absolute_error(y_true, y_pred)),
+        "r2": float(r2_score(y_true, y_pred)),
+    }
+
+
 def save_artifacts(model, train_config, metrics):
     checkpoint_path = Path(train_config["checkpoint_path"])
     checkpoint_path.parent.mkdir(parents=True, exist_ok=True)
@@ -142,7 +176,8 @@ def save_artifacts(model, train_config, metrics):
 
 def load_parameter_vector(parameter_path, sample_index=0):
     parameter_array = np.load(parameter_path)
-    if parameter_array.ndim == 2:
+    if parameter_array.ndim >= 2:
+        parameter_array = parameter_array.reshape(parameter_array.shape[0], -1)
         if sample_index >= parameter_array.shape[0]:
             raise IndexError(
                 "sample_index={} 超出参数样本数量 {}".format(sample_index, parameter_array.shape[0])
@@ -183,6 +218,8 @@ def train_model(args):
         seed=int(data_config.get("seed", 42)),
         retention_scaler_path=data_config["retention_scaler_path"],
         pec_scaler_path=data_config["pec_scaler_path"],
+        feature_scaler_path=data_config.get("feature_scaler_path"),
+        feature_scale_method=data_config.get("feature_scale_method", "standard"),
         wl_vocab_path=data_config["wl_vocab_path"],
         processed_csv_path=data_config.get("processed_csv_path"),
     )
@@ -230,14 +267,28 @@ def train_model(args):
 
     val_metrics = evaluate(model, loaders["val"], criterion, device) or {"loss": None}
     test_metrics = evaluate(model, loaders["test"], criterion, device) or {"loss": None}
+    val_summary = summarize_regression_metrics(val_metrics)
+    test_summary = summarize_regression_metrics(test_metrics)
     final_metrics = {
         "mode": args.mode,
-        "train_loss_last_epoch": train_loss,
-        "best_val_loss": best_val_loss,
-        "val_loss": val_metrics["loss"],
-        "test_loss": test_metrics["loss"],
+        "train_loss_last_epoch": float(train_loss),
+        "best_val_loss": float(best_val_loss),
+        "val_loss": val_summary["loss"],
+        "val_mse": val_summary["mse"],
+        "val_rmse": val_summary["rmse"],
+        "val_mae": val_summary["mae"],
+        "val_r2": val_summary["r2"],
+        "test_loss": test_summary["loss"],
+        "test_mse": test_summary["mse"],
+        "test_rmse": test_summary["rmse"],
+        "test_mae": test_summary["mae"],
+        "test_r2": test_summary["r2"],
         "num_wl": len(metadata["wl_values"]),
         "parameter_dim": int(parameters_to_vector(model.parameters()).numel()),
+        "dataset_size": int(metadata["features"].shape[0]),
+        "train_size": int(len(metadata["indices"]["train"])),
+        "val_size": int(len(metadata["indices"]["val"])),
+        "test_size": int(len(metadata["indices"]["test"])),
     }
 
     save_artifacts(model, train_config, final_metrics)
@@ -265,13 +316,45 @@ def extract_parameter_vector(args):
 def main():
     parser = argparse.ArgumentParser(description="3D NAND 参数回归训练入口")
     parser.add_argument("--config_filename", default="config.yaml", type=str)
-    parser.add_argument("--mode", choices=["train", "finetune", "extract"], default="train")
+    parser.add_argument(
+        "--mode",
+        choices=[
+            "train",
+            "finetune",
+            "extract",
+            "prepare_domains",
+            "train_source_domain",
+            "finetune_target_domain",
+            "full_curve_transfer",
+        ],
+        default="train",
+    )
     parser.add_argument("--diffusion_sample_path", default="", type=str)
     parser.add_argument("--sample_index", default=0, type=int)
     parser.add_argument("--epochs", default=None, type=int)
+    parser.add_argument("--limit_source_tasks", default=None, type=int)
+    parser.add_argument("--limit_target_tasks", default=None, type=int)
     args = parser.parse_args()
 
-    if args.mode == "extract":
+    if args.mode == "prepare_domains":
+        config = load_local_config(args.config_filename)
+        prepare_curve_domains(config)
+    elif args.mode == "train_source_domain":
+        config = load_local_config(args.config_filename)
+        train_source_domain_models(config, limit_tasks=args.limit_source_tasks)
+    elif args.mode == "finetune_target_domain":
+        config = load_local_config(args.config_filename)
+        if not args.diffusion_sample_path:
+            raise ValueError("--diffusion_sample_path is required for finetune_target_domain")
+        finetune_target_domain_models(
+            config,
+            diffusion_sample_path=args.diffusion_sample_path,
+            limit_tasks=args.limit_target_tasks,
+        )
+    elif args.mode == "full_curve_transfer":
+        config = load_local_config(args.config_filename)
+        run_curve_transfer_full_pipeline(config)
+    elif args.mode == "extract":
         extract_parameter_vector(args)
     else:
         train_model(args)

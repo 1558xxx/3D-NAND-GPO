@@ -1,0 +1,21 @@
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\毕业设计\\3D NAND\\Data\\split_by_model\\model_2.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 270434,
+  "source_num_points_mean": 20.144176136363637,
+  "target_num_points_mean": 20.889322916666668,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}

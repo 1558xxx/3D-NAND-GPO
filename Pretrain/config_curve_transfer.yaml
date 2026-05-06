@@ -1,0 +1,61 @@
+experiment:
+  workflow: curve_group_transfer
+
+data:
+  csv_path: ../Data/split_by_model/model_2.csv
+  source_retentions: [1, 2, 3]
+  target_retentions: [4, 5, 6]
+  min_task_points: 12
+  target_task_split:
+    train: 0.6
+    val: 0.2
+    test: 0.2
+  artifacts_dir: ./artifacts/curve_transfer
+  source_task_bundle_path: ./artifacts/curve_transfer/source_tasks.pkl
+  target_task_bundle_path: ./artifacts/curve_transfer/target_tasks.pkl
+  source_condition_csv: ./artifacts/curve_transfer/source_conditions.csv
+  target_condition_csv: ./artifacts/curve_transfer/target_conditions.csv
+  domain_summary_path: ./artifacts/curve_transfer/domain_summary.json
+  step_scaler_path: ./artifacts/curve_transfer/step_scaler.pkl
+  retention_scaler_path: ./artifacts/curve_transfer/retention_scaler.pkl
+  pec_scaler_path: ./artifacts/curve_transfer/pec_scaler.pkl
+  wl_vocab_path: ./artifacts/curve_transfer/wl_vocab.json
+
+model:
+  type: MLP
+  in_dim: 1
+  hidden_dims: [32, 16]
+  out_dim: 1
+  activation: tanh
+
+train:
+  seed: 42
+  device: cpu
+  parallel_workers: 8
+  optimizer: lbfgs
+  lr: 0.01
+  lbfgs_lr: 0.8
+  lbfgs_max_iter: 5
+  lbfgs_history_size: 20
+  weight_decay: 0.0
+  source_epochs: 140
+  target_epochs: 140
+  patience: 20
+  min_delta: 1.0e-6
+  target_scratch_retries: 1
+  source_parameter_vector_path: ./artifacts/curve_transfer/source_params.npy
+  source_metrics_path: ./artifacts/curve_transfer/source_task_metrics.csv
+  source_summary_path: ./artifacts/curve_transfer/source_summary.json
+  target_finetuned_params_path: ./artifacts/curve_transfer/target_finetuned_params.npy
+  target_metrics_path: ./artifacts/curve_transfer/target_task_metrics.csv
+  target_report_path: ./artifacts/curve_transfer/target_transfer_report.json
+
+gpd:
+  exp_index: 9501
+  modeldim: 16
+  epochs: 100
+  diffusionstep: 10
+  denoise: Trans3
+  trainbatchsize: 1
+  samplebatchsize: 64
+  repeat_num: 1

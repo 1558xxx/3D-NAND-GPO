@@ -1,0 +1,67 @@
+{
+  "source_limit": 20,
+  "target_limit": 20,
+  "seed": 42,
+  "source_params_shape": [
+    20,
+    609
+  ],
+  "generated_params_shape": [
+    20,
+    1,
+    609
+  ],
+  "target_finetuned_params_shape": [
+    20,
+    609
+  ],
+  "sample_only": true,
+  "source_task_ids": [
+    724,
+    752,
+    794,
+    1082,
+    1699,
+    3651,
+    3700,
+    3804,
+    4334,
+    4442,
+    5518,
+    5882,
+    6057,
+    6210,
+    6425,
+    6524,
+    6637,
+    7093,
+    7241,
+    8234
+  ],
+  "target_task_ids": [
+    168,
+    369,
+    1896,
+    2226,
+    2312,
+    2332,
+    3208,
+    3383,
+    3547,
+    3810,
+    3918,
+    4259,
+    4867,
+    4954,
+    5400,
+    5498,
+    6346,
+    7079,
+    7145,
+    8141
+  ],
+  "source_bundle_path": "C:\\Users\\lzz\\Desktop\\毕业设计\\3D NAND\\Pretrain\\artifacts\\curve_transfer_sample\\subsets\\source_tasks_20_seed42.pkl",
+  "target_bundle_path": "C:\\Users\\lzz\\Desktop\\毕业设计\\3D NAND\\Pretrain\\artifacts\\curve_transfer_sample\\subsets\\target_tasks_20_seed43.pkl",
+  "source_condition_csv": "C:\\Users\\lzz\\Desktop\\毕业设计\\3D NAND\\Pretrain\\artifacts\\curve_transfer_sample\\subsets\\source_conditions_20_seed42.csv",
+  "target_condition_csv": "C:\\Users\\lzz\\Desktop\\毕业设计\\3D NAND\\Pretrain\\artifacts\\curve_transfer_sample\\subsets\\target_conditions_20_seed43.csv"
+}

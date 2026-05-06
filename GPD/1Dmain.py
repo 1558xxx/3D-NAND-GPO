@@ -90,6 +90,7 @@ if __name__ == "__main__":
     parser.add_argument("--expIndex", type=int, default=888)
     parser.add_argument("--diffusionstep", type=int, default=500)
     parser.add_argument("--denoise", type=str, default="Trans3")
+    parser.add_argument("--trainbatchsize", type=int, default=64)
     parser.add_argument("--samplebatchsize", type=int, default=64)
     parser.add_argument("--repeat_num", type=int, default=1)
     parser.add_argument("--train_param_path", type=str, default="../Pretrain/PrepareParams/model_params.npy")
@@ -129,7 +130,7 @@ if __name__ == "__main__":
     diffusion_step = args.diffusionstep
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     num_epoch = args.epochs
-    batchsize = 64
+    batchsize = args.trainbatchsize
     sample_times = 1
     transformer_dim = args.modeldim
 

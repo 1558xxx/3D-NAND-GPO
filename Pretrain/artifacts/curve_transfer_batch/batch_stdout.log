@@ -1,0 +1,4789 @@
+[2026-05-06 13:45:18] model_2: starting sample tuning
+[2026-05-06 13:45:18] model_2: sample attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_2.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 270434,
+  "source_num_points_mean": 20.144176136363637,
+  "target_num_points_mean": 20.889322916666668,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 4
+trained source tasks 1/150
+trained source tasks 150/150
+{
+  "source_task_count": 150,
+  "parameter_dim": 609,
+  "mean_train_mse": 3183.753290710449,
+  "mean_train_rmse": 51.69408315022786,
+  "mean_train_mae": 28.91351688067118,
+  "mean_train_r2": 0.9974254363643744
+}
+
+
+2026-05-06 13:45:51: begin training
+training_seq.shape (150, 1, 609)
+condition.shape (150, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=52201, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\sample\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\sample\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\sample\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\sample\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 150 samples in 3 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 1.1771302223205566
+training complete
+final sampling: generating 150 samples in 3 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 4
+finetuned target tasks 1/150
+finetuned target tasks 150/150
+{
+  "task_count": 150,
+  "train": {
+    "point_level": {
+      "mse": 29000.9453125,
+      "rmse": 170.29664611816406,
+      "mae": 63.002620697021484,
+      "r2": 0.976744843356082,
+      "num_points": 1901
+    },
+    "task_level": {
+      "mean_mse": 28656.676126861574,
+      "mean_rmse": 104.8638893286387,
+      "mean_mae": 62.714907817840576,
+      "mean_r2": 0.9771244555268197,
+      "median_r2": 0.9949730956492242
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 18609.142578125,
+      "rmse": 136.4153289794922,
+      "mae": 69.17424011230469,
+      "r2": 0.9825379065531015,
+      "num_points": 618
+    },
+    "task_level": {
+      "mean_mse": 18781.59023707072,
+      "mean_rmse": 107.79273721377055,
+      "mean_mae": 69.20276502609254,
+      "mean_r2": 0.9774278877036924,
+      "median_r2": 0.9906357002378482
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 22658.3125,
+      "rmse": 150.5267791748047,
+      "mae": 76.28791046142578,
+      "r2": 0.9733710645187343,
+      "num_points": 618
+    },
+    "task_level": {
+      "mean_mse": 22838.246893107098,
+      "mean_rmse": 116.39424269358317,
+      "mean_mae": 76.3329407564799,
+      "mean_r2": 0.9726641259598333,
+      "median_r2": 0.9890500989440145
+    }
+  },
+  "target_task_count": 150,
+  "parameter_dim": 609
+}
+{
+  "source_limit": 150,
+  "target_limit": 150,
+  "seed": 42,
+  "source_params_shape": [
+    150,
+    609
+  ],
+  "generated_params_shape": [
+    150,
+    1,
+    609
+  ],
+  "target_finetuned_params_shape": [
+    150,
+    609
+  ],
+  "sample_only": true,
+  "source_task_ids": [
+    61,
+    259,
+    292,
+    313,
+    365,
+    492,
+    531,
+    566,
+    638,
+    667,
+    713,
+    740,
+    763,
+    767,
+    782,
+    815,
+    964,
+    1065,
+    1087,
+    1173,
+    1176,
+    1289,
+    1346,
+    1377,
+    1518,
+    1585,
+    1625,
+    1673,
+    1679,
+    1811,
+    1892,
+    1900,
+    1975,
+    2011,
+    2066,
+    2307,
+    2330,
+    2334,
+    2420,
+    2563,
+    2619,
+    2725,
+    2765,
+    2931,
+    2957,
+    3038,
+    3065,
+    3085,
+    3099,
+    3251,
+    3350,
+    3435,
+    3448,
+    3595,
+    3643,
+    3651,
+    3663,
+    3685,
+    3692,
+    3701,
+    3719,
+    3746,
+    3751,
+    3860,
+    3875,
+    3898,
+    3929,
+    3964,
+    3967,
+    3983,
+    4158,
+    4162,
+    4253,
+    4267,
+    4374,
+    4541,
+    4566,
+    4620,
+    4666,
+    4673,
+    4715,
+    4728,
+    4761,
+    4765,
+    4785,
+    4842,
+    5084,
+    5266,
+    5279,
+    5346,
+    5349,
+    5359,
+    5433,
+    5510,
+    5588,
+    5611,
+    5627,
+    5658,
+    5708,
+    5730,
+    5747,
+    5792,
+    5843,
+    5871,
+    5929,
+    5964,
+    6114,
+    6212,
+    6226,
+    6322,
+    6326,
+    6344,
+    6423,
+    6439,
+    6445,
+    6497,
+    6504,
+    6535,
+    6558,
+    6565,
+    6613,
+    6659,
+    6695,
+    6703,
+    6751,
+    6761,
+    6850,
+    6899,
+    6940,
+    6979,
+    6980,
+    6984,
+    6994,
+    7062,
+    7129,
+    7153,
+    7202,
+    7206,
+    7398,
+    7453,
+    7537,
+    7574,
+    7711,
+    7712,
+    7878,
+    8090,
+    8099,
+    8107,
+    8293,
+    8381
+  ],
+  "target_task_ids": [
+    33,
+    34,
+    107,
+    117,
+    166,
+    279,
+    281,
+    363,
+    389,
+    423,
+    621,
+    642,
+    694,
+    695,
+    782,
+    881,
+    990,
+    997,
+    1035,
+    1054,
+    1056,
+    1070,
+    1107,
+    1168,
+    1224,
+    1273,
+    1296,
+    1389,
+    1442,
+    1467,
+    1576,
+    1632,
+    1736,
+    1867,
+    2061,
+    2192,
+    2237,
+    2276,
+    2296,
+    2319,
+    2345,
+    2388,
+    2424,
+    2508,
+    2546,
+    2573,
+    2692,
+    2711,
+    2720,
+    2747,
+    2857,
+    2858,
+    3158,
+    3159,
+    3236,
+    3266,
+    3331,
+    3332,
+    3337,
+    3474,
+    3485,
+    3492,
+    3500,
+    3514,
+    3519,
+    3566,
+    3751,
+    3772,
+    3805,
+    3828,
+    3858,
+    3919,
+    4048,
+    4188,
+    4189,
+    4193,
+    4225,
+    4448,
+    4461,
+    4524,
+    4565,
+    4607,
+    4647,
+    4717,
+    4776,
+    4792,
+    4826,
+    4849,
+    4869,
+    4877,
+    4929,
+    4949,
+    5043,
+    5101,
+    5112,
+    5144,
+    5316,
+    5381,
+    5384,
+    5414,
+    5534,
+    5617,
+    5658,
+    5694,
+    5816,
+    5841,
+    5843,
+    5858,
+    5887,
+    6248,
+    6299,
+    6359,
+    6407,
+    6425,
+    6466,
+    6743,
+    6752,
+    6762,
+    6839,
+    6878,
+    6970,
+    6983,
+    6987,
+    7035,
+    7063,
+    7090,
+    7141,
+    7214,
+    7257,
+    7309,
+    7333,
+    7411,
+    7422,
+    7439,
+    7451,
+    7578,
+    7764,
+    7785,
+    7869,
+    7884,
+    7923,
+    7931,
+    7948,
+    7971,
+    8015,
+    8259,
+    8325,
+    8330,
+    8407,
+    8441
+  ],
+  "source_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_tasks_150_seed42.pkl",
+  "target_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_tasks_150_seed43.pkl",
+  "source_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv",
+  "target_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv"
+}
+sample transfer test point-level: {'mse': 22658.3125, 'rmse': 150.5267791748047, 'mae': 76.28791046142578, 'r2': 0.9733710645187343, 'num_points': 618}
+sample transfer test task-level: {'mean_mse': 22838.246893107098, 'mean_rmse': 116.39424269358317, 'mean_mae': 76.3329407564799, 'mean_r2': 0.9726641259598333, 'median_r2': 0.9890500989440145}
+[2026-05-06 13:46:24] model_2: sample tanh_32x16_e140_g100_r1 point_r2=0.9734 task_mean_r2=0.9727
+[2026-05-06 13:46:24] model_2: sample tuning reached stop threshold with tanh_32x16_e140_g100_r1
+[2026-05-06 13:46:24] model_2: full attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_2.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 270434,
+  "source_num_points_mean": 20.144176136363637,
+  "target_num_points_mean": 20.889322916666668,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 8
+trained source tasks 1/8448
+trained source tasks 200/8448
+trained source tasks 400/8448
+trained source tasks 600/8448
+trained source tasks 800/8448
+trained source tasks 1000/8448
+trained source tasks 1200/8448
+trained source tasks 1400/8448
+trained source tasks 1600/8448
+trained source tasks 1800/8448
+trained source tasks 2000/8448
+trained source tasks 2200/8448
+trained source tasks 2400/8448
+trained source tasks 2600/8448
+trained source tasks 2800/8448
+trained source tasks 3000/8448
+trained source tasks 3200/8448
+trained source tasks 3400/8448
+trained source tasks 3600/8448
+trained source tasks 3800/8448
+trained source tasks 4000/8448
+trained source tasks 4200/8448
+trained source tasks 4400/8448
+trained source tasks 4600/8448
+trained source tasks 4800/8448
+trained source tasks 5000/8448
+trained source tasks 5200/8448
+trained source tasks 5400/8448
+trained source tasks 5600/8448
+trained source tasks 5800/8448
+trained source tasks 6000/8448
+trained source tasks 6200/8448
+trained source tasks 6400/8448
+trained source tasks 6600/8448
+trained source tasks 6800/8448
+trained source tasks 7000/8448
+trained source tasks 7200/8448
+trained source tasks 7400/8448
+trained source tasks 7600/8448
+trained source tasks 7800/8448
+trained source tasks 8000/8448
+trained source tasks 8200/8448
+trained source tasks 8400/8448
+trained source tasks 8448/8448
+{
+  "source_task_count": 8448,
+  "parameter_dim": 609,
+  "mean_train_mse": 4946.25727403322,
+  "mean_train_rmse": 53.175239899753116,
+  "mean_train_mae": 29.891329307380754,
+  "mean_train_r2": 0.9959903354410289
+}
+2026-05-06 13:58:35: begin training
+training_seq.shape (8448, 1, 609)
+condition.shape (8448, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=62201, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\full\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\full\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\full\\tanh_32x16_e140_g100_r1\\target_conditions.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\full\\tanh_32x16_e140_g100_r1\\source_conditions.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\full\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_2\\full\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 8448 samples in 132 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 1.0995067358016968
+training complete
+final sampling: generating 8448 samples in 132 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 8
+finetuned target tasks 1/8448
+finetuned target tasks 200/8448
+finetuned target tasks 400/8448
+finetuned target tasks 600/8448
+finetuned target tasks 800/8448
+finetuned target tasks 1000/8448
+finetuned target tasks 1200/8448
+finetuned target tasks 1400/8448
+finetuned target tasks 1600/8448
+finetuned target tasks 1800/8448
+finetuned target tasks 2000/8448
+finetuned target tasks 2200/8448
+finetuned target tasks 2400/8448
+finetuned target tasks 2600/8448
+finetuned target tasks 2800/8448
+finetuned target tasks 3000/8448
+finetuned target tasks 3200/8448
+finetuned target tasks 3400/8448
+finetuned target tasks 3600/8448
+finetuned target tasks 3800/8448
+finetuned target tasks 4000/8448
+finetuned target tasks 4200/8448
+finetuned target tasks 4400/8448
+finetuned target tasks 4600/8448
+finetuned target tasks 4800/8448
+finetuned target tasks 5000/8448
+finetuned target tasks 5200/8448
+finetuned target tasks 5400/8448
+finetuned target tasks 5600/8448
+finetuned target tasks 5800/8448
+finetuned target tasks 6000/8448
+finetuned target tasks 6200/8448
+finetuned target tasks 6400/8448
+finetuned target tasks 6600/8448
+finetuned target tasks 6800/8448
+finetuned target tasks 7000/8448
+finetuned target tasks 7200/8448
+finetuned target tasks 7400/8448
+finetuned target tasks 7600/8448
+finetuned target tasks 7800/8448
+finetuned target tasks 8000/8448
+finetuned target tasks 8200/8448
+finetuned target tasks 8400/8448
+finetuned target tasks 8448/8448
+{
+  "task_count": 8448,
+  "train": {
+    "point_level": {
+      "mse": 16459.970703125,
+      "rmse": 128.29641723632812,
+      "mae": 57.461360931396484,
+      "r2": 0.9866514893584363,
+      "num_points": 106809
+    },
+    "task_level": {
+      "mean_mse": 16508.806789613387,
+      "mean_rmse": 95.94497466923768,
+      "mean_mae": 57.58385587414853,
+      "mean_r2": 0.9867323429882583,
+      "median_r2": 0.9959015368410067
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 19049.72265625,
+      "rmse": 138.02073669433594,
+      "mae": 72.06153869628906,
+      "r2": 0.9826118007408966,
+      "num_points": 34832
+    },
+    "task_level": {
+      "mean_mse": 19233.39577355401,
+      "mean_rmse": 109.76549572092622,
+      "mean_mae": 72.37464696085645,
+      "mean_r2": 0.9770869837904701,
+      "median_r2": 0.992308123767917
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 21963.2734375,
+      "rmse": 148.2001190185547,
+      "mae": 73.7151870727539,
+      "r2": 0.9747341313721908,
+      "num_points": 34832
+    },
+    "task_level": {
+      "mean_mse": 22153.067202237264,
+      "mean_rmse": 113.14077727293426,
+      "mean_mae": 74.00325089158264,
+      "mean_r2": 0.9752509173264761,
+      "median_r2": 0.9907587055684552
+    }
+  },
+  "target_task_count": 8448,
+  "parameter_dim": 609
+}
+[2026-05-06 14:13:39] model_2: full tanh_32x16_e140_g100_r1 point_r2=0.9747 task_mean_r2=0.9753
+[2026-05-06 14:13:39] model_2: passed full threshold with tanh_32x16_e140_g100_r1
+[2026-05-06 14:13:39] model_3: starting sample tuning
+[2026-05-06 14:13:39] model_3: sample attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_3.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 292780,
+  "source_num_points_mean": 22.87405303030303,
+  "target_num_points_mean": 23.562973484848484,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 4
+trained source tasks 1/150
+trained source tasks 150/150
+{
+  "source_task_count": 150,
+  "parameter_dim": 609,
+  "mean_train_mse": 51243.508864332834,
+  "mean_train_rmse": 91.32113201141357,
+  "mean_train_mae": 52.4584899799029,
+  "mean_train_r2": 0.959992589727518
+}
+2026-05-06 14:14:14: begin training
+training_seq.shape (150, 1, 609)
+condition.shape (150, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=52301, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\sample\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\sample\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\sample\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\sample\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 150 samples in 3 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 1.2188197374343872
+training complete
+final sampling: generating 150 samples in 3 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 4
+finetuned target tasks 1/150
+finetuned target tasks 150/150
+{
+  "task_count": 150,
+  "train": {
+    "point_level": {
+      "mse": 13371.783203125,
+      "rmse": 115.63642883300781,
+      "mae": 52.812931060791016,
+      "r2": 0.9880645698078193,
+      "num_points": 2125
+    },
+    "task_level": {
+      "mean_mse": 13676.938688354492,
+      "mean_rmse": 92.13693798700969,
+      "mean_mae": 53.423122857411705,
+      "mean_r2": 0.9877535614938955,
+      "median_r2": 0.9954505062057892
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 21350.369140625,
+      "rmse": 146.11766052246094,
+      "mae": 66.32258605957031,
+      "r2": 0.9810890374197654,
+      "num_points": 702
+    },
+    "task_level": {
+      "mean_mse": 21084.663974202474,
+      "mean_rmse": 109.97954562187195,
+      "mean_mae": 66.68286355177561,
+      "mean_r2": 0.9794234525950164,
+      "median_r2": 0.992544662260366
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 21096.029296875,
+      "rmse": 145.24472045898438,
+      "mae": 65.86112976074219,
+      "r2": 0.9805254465125524,
+      "num_points": 702
+    },
+    "task_level": {
+      "mean_mse": 20634.760362701418,
+      "mean_rmse": 110.25148192723591,
+      "mean_mae": 66.05665241559346,
+      "mean_r2": 0.9801821292846006,
+      "median_r2": 0.9931507936588989
+    }
+  },
+  "target_task_count": 150,
+  "parameter_dim": 609
+}
+{
+  "source_limit": 150,
+  "target_limit": 150,
+  "seed": 42,
+  "source_params_shape": [
+    150,
+    609
+  ],
+  "generated_params_shape": [
+    150,
+    1,
+    609
+  ],
+  "target_finetuned_params_shape": [
+    150,
+    609
+  ],
+  "sample_only": true,
+  "source_task_ids": [
+    61,
+    259,
+    292,
+    313,
+    365,
+    492,
+    531,
+    566,
+    638,
+    667,
+    713,
+    740,
+    763,
+    767,
+    782,
+    815,
+    964,
+    1065,
+    1087,
+    1173,
+    1176,
+    1289,
+    1346,
+    1377,
+    1518,
+    1585,
+    1625,
+    1673,
+    1679,
+    1811,
+    1892,
+    1900,
+    1975,
+    2011,
+    2066,
+    2307,
+    2330,
+    2334,
+    2420,
+    2563,
+    2619,
+    2725,
+    2765,
+    2931,
+    2957,
+    3038,
+    3065,
+    3085,
+    3099,
+    3251,
+    3350,
+    3435,
+    3448,
+    3595,
+    3643,
+    3651,
+    3663,
+    3685,
+    3692,
+    3701,
+    3719,
+    3746,
+    3751,
+    3860,
+    3875,
+    3898,
+    3929,
+    3964,
+    3967,
+    3983,
+    4158,
+    4162,
+    4253,
+    4267,
+    4374,
+    4541,
+    4566,
+    4620,
+    4666,
+    4673,
+    4715,
+    4728,
+    4761,
+    4765,
+    4785,
+    4842,
+    5084,
+    5266,
+    5279,
+    5346,
+    5349,
+    5359,
+    5433,
+    5510,
+    5588,
+    5611,
+    5627,
+    5658,
+    5708,
+    5730,
+    5747,
+    5792,
+    5843,
+    5871,
+    5929,
+    5964,
+    6114,
+    6212,
+    6226,
+    6322,
+    6326,
+    6344,
+    6423,
+    6439,
+    6445,
+    6497,
+    6504,
+    6535,
+    6558,
+    6565,
+    6613,
+    6659,
+    6695,
+    6703,
+    6751,
+    6761,
+    6850,
+    6899,
+    6940,
+    6979,
+    6980,
+    6984,
+    6994,
+    7062,
+    7129,
+    7153,
+    7202,
+    7206,
+    7398,
+    7453,
+    7537,
+    7574,
+    7711,
+    7712,
+    7878,
+    8090,
+    8099,
+    8107,
+    8293,
+    8381
+  ],
+  "target_task_ids": [
+    33,
+    34,
+    107,
+    117,
+    166,
+    279,
+    281,
+    363,
+    389,
+    423,
+    621,
+    642,
+    694,
+    695,
+    782,
+    881,
+    990,
+    997,
+    1035,
+    1054,
+    1056,
+    1070,
+    1107,
+    1168,
+    1224,
+    1273,
+    1296,
+    1389,
+    1442,
+    1467,
+    1576,
+    1632,
+    1736,
+    1867,
+    2061,
+    2192,
+    2237,
+    2276,
+    2296,
+    2319,
+    2345,
+    2388,
+    2424,
+    2508,
+    2546,
+    2573,
+    2692,
+    2711,
+    2720,
+    2747,
+    2857,
+    2858,
+    3158,
+    3159,
+    3236,
+    3266,
+    3331,
+    3332,
+    3337,
+    3474,
+    3485,
+    3492,
+    3500,
+    3514,
+    3519,
+    3566,
+    3751,
+    3772,
+    3805,
+    3828,
+    3858,
+    3919,
+    4048,
+    4188,
+    4189,
+    4193,
+    4225,
+    4448,
+    4461,
+    4524,
+    4565,
+    4607,
+    4647,
+    4717,
+    4776,
+    4792,
+    4826,
+    4849,
+    4869,
+    4877,
+    4929,
+    4949,
+    5043,
+    5101,
+    5112,
+    5144,
+    5316,
+    5381,
+    5384,
+    5414,
+    5534,
+    5617,
+    5658,
+    5694,
+    5816,
+    5841,
+    5843,
+    5858,
+    5887,
+    6248,
+    6299,
+    6359,
+    6407,
+    6425,
+    6466,
+    6743,
+    6752,
+    6762,
+    6839,
+    6878,
+    6970,
+    6983,
+    6987,
+    7035,
+    7063,
+    7090,
+    7141,
+    7214,
+    7257,
+    7309,
+    7333,
+    7411,
+    7422,
+    7439,
+    7451,
+    7578,
+    7764,
+    7785,
+    7869,
+    7884,
+    7923,
+    7931,
+    7948,
+    7971,
+    8015,
+    8259,
+    8325,
+    8330,
+    8407,
+    8441
+  ],
+  "source_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_tasks_150_seed42.pkl",
+  "target_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_tasks_150_seed43.pkl",
+  "source_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv",
+  "target_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv"
+}
+sample transfer test point-level: {'mse': 21096.029296875, 'rmse': 145.24472045898438, 'mae': 65.86112976074219, 'r2': 0.9805254465125524, 'num_points': 702}
+sample transfer test task-level: {'mean_mse': 20634.760362701418, 'mean_rmse': 110.25148192723591, 'mean_mae': 66.05665241559346, 'mean_r2': 0.9801821292846006, 'median_r2': 0.9931507936588989}
+[2026-05-06 14:14:45] model_3: sample tanh_32x16_e140_g100_r1 point_r2=0.9805 task_mean_r2=0.9802
+[2026-05-06 14:14:45] model_3: sample tuning reached stop threshold with tanh_32x16_e140_g100_r1
+[2026-05-06 14:14:45] model_3: full attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_3.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 292780,
+  "source_num_points_mean": 22.87405303030303,
+  "target_num_points_mean": 23.562973484848484,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 8
+trained source tasks 1/8448
+trained source tasks 200/8448
+trained source tasks 400/8448
+trained source tasks 600/8448
+trained source tasks 800/8448
+trained source tasks 1000/8448
+trained source tasks 1200/8448
+trained source tasks 1400/8448
+trained source tasks 1600/8448
+trained source tasks 1800/8448
+trained source tasks 2000/8448
+trained source tasks 2200/8448
+trained source tasks 2400/8448
+trained source tasks 2600/8448
+trained source tasks 2800/8448
+trained source tasks 3000/8448
+trained source tasks 3200/8448
+trained source tasks 3400/8448
+trained source tasks 3600/8448
+trained source tasks 3800/8448
+trained source tasks 4000/8448
+trained source tasks 4200/8448
+trained source tasks 4400/8448
+trained source tasks 4600/8448
+trained source tasks 4800/8448
+trained source tasks 5000/8448
+trained source tasks 5200/8448
+trained source tasks 5400/8448
+trained source tasks 5600/8448
+trained source tasks 5800/8448
+trained source tasks 6000/8448
+trained source tasks 6200/8448
+trained source tasks 6400/8448
+trained source tasks 6600/8448
+trained source tasks 6800/8448
+trained source tasks 7000/8448
+trained source tasks 7200/8448
+trained source tasks 7400/8448
+trained source tasks 7600/8448
+trained source tasks 7800/8448
+trained source tasks 8000/8448
+trained source tasks 8200/8448
+trained source tasks 8400/8448
+trained source tasks 8448/8448
+{
+  "source_task_count": 8448,
+  "parameter_dim": 609,
+  "mean_train_mse": 39290.030948311585,
+  "mean_train_rmse": 84.88236955381669,
+  "mean_train_mae": 48.23788004297195,
+  "mean_train_r2": 0.9687949398184227
+}
+2026-05-06 14:27:49: begin training
+training_seq.shape (8448, 1, 609)
+condition.shape (8448, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=62301, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\full\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\full\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\full\\tanh_32x16_e140_g100_r1\\target_conditions.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\full\\tanh_32x16_e140_g100_r1\\source_conditions.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\full\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_3\\full\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 8448 samples in 132 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 0.9950789213180542
+training complete
+final sampling: generating 8448 samples in 132 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 8
+finetuned target tasks 1/8448
+finetuned target tasks 200/8448
+finetuned target tasks 400/8448
+finetuned target tasks 600/8448
+finetuned target tasks 800/8448
+finetuned target tasks 1000/8448
+finetuned target tasks 1200/8448
+finetuned target tasks 1400/8448
+finetuned target tasks 1600/8448
+finetuned target tasks 1800/8448
+finetuned target tasks 2000/8448
+finetuned target tasks 2200/8448
+finetuned target tasks 2400/8448
+finetuned target tasks 2600/8448
+finetuned target tasks 2800/8448
+finetuned target tasks 3000/8448
+finetuned target tasks 3200/8448
+finetuned target tasks 3400/8448
+finetuned target tasks 3600/8448
+finetuned target tasks 3800/8448
+finetuned target tasks 4000/8448
+finetuned target tasks 4200/8448
+finetuned target tasks 4400/8448
+finetuned target tasks 4600/8448
+finetuned target tasks 4800/8448
+finetuned target tasks 5000/8448
+finetuned target tasks 5200/8448
+finetuned target tasks 5400/8448
+finetuned target tasks 5600/8448
+finetuned target tasks 5800/8448
+finetuned target tasks 6000/8448
+finetuned target tasks 6200/8448
+finetuned target tasks 6400/8448
+finetuned target tasks 6600/8448
+finetuned target tasks 6800/8448
+finetuned target tasks 7000/8448
+finetuned target tasks 7200/8448
+finetuned target tasks 7400/8448
+finetuned target tasks 7600/8448
+finetuned target tasks 7800/8448
+finetuned target tasks 8000/8448
+finetuned target tasks 8200/8448
+finetuned target tasks 8400/8448
+finetuned target tasks 8448/8448
+{
+  "task_count": 8448,
+  "train": {
+    "point_level": {
+      "mse": 14500.546875,
+      "rmse": 120.418212890625,
+      "mae": 53.15108108520508,
+      "r2": 0.9870358955066632,
+      "num_points": 119594
+    },
+    "task_level": {
+      "mean_mse": 14736.224732943603,
+      "mean_rmse": 92.80417642806292,
+      "mean_mae": 53.47744138560357,
+      "mean_r2": 0.9869811311949569,
+      "median_r2": 0.9951173144510698
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 19317.626953125,
+      "rmse": 138.9878692626953,
+      "mae": 67.18305206298828,
+      "r2": 0.9830053884556657,
+      "num_points": 39733
+    },
+    "task_level": {
+      "mean_mse": 19702.424178697453,
+      "mean_rmse": 110.45216732634458,
+      "mean_mae": 67.9341813095168,
+      "mean_r2": 0.9820640101695106,
+      "median_r2": 0.9925573897282369
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 20921.0546875,
+      "rmse": 144.64112854003906,
+      "mae": 67.1281967163086,
+      "r2": 0.980672556684435,
+      "num_points": 39733
+    },
+    "task_level": {
+      "mean_mse": 21064.086417675244,
+      "mean_rmse": 112.17820800095797,
+      "mean_mae": 67.47015701804423,
+      "mean_r2": 0.9783535241650358,
+      "median_r2": 0.9922743458684893
+    }
+  },
+  "target_task_count": 8448,
+  "parameter_dim": 609
+}
+[2026-05-06 14:42:05] model_3: full tanh_32x16_e140_g100_r1 point_r2=0.9807 task_mean_r2=0.9784
+[2026-05-06 14:42:05] model_3: passed full threshold with tanh_32x16_e140_g100_r1
+[2026-05-06 14:42:05] model_4: starting sample tuning
+[2026-05-06 14:42:05] model_4: sample attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_4.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 303852,
+  "source_num_points_mean": 23.739583333333332,
+  "target_num_points_mean": 24.529474431818183,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 4
+trained source tasks 1/150
+trained source tasks 150/150
+{
+  "source_task_count": 150,
+  "parameter_dim": 609,
+  "mean_train_mse": 3050.951545543671,
+  "mean_train_rmse": 48.93251166502635,
+  "mean_train_mae": 25.178941729068757,
+  "mean_train_r2": 0.9974748293524306
+}
+2026-05-06 14:42:44: begin training
+training_seq.shape (150, 1, 609)
+condition.shape (150, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=52401, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\sample\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\sample\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\sample\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\sample\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 150 samples in 3 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 0.9232999682426453
+training complete
+final sampling: generating 150 samples in 3 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 4
+finetuned target tasks 1/150
+finetuned target tasks 150/150
+{
+  "task_count": 150,
+  "train": {
+    "point_level": {
+      "mse": 25965.216796875,
+      "rmse": 161.13726806640625,
+      "mae": 62.04719161987305,
+      "r2": 0.976410893737716,
+      "num_points": 2213
+    },
+    "task_level": {
+      "mean_mse": 25887.853401082357,
+      "mean_rmse": 111.05466427167256,
+      "mean_mae": 62.28880808830261,
+      "mean_r2": 0.9782293540849448,
+      "median_r2": 0.9944131458084216
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 28702.12109375,
+      "rmse": 169.41700744628906,
+      "mae": 75.10228729248047,
+      "r2": 0.9744912976310859,
+      "num_points": 724
+    },
+    "task_level": {
+      "mean_mse": 29780.665531692506,
+      "mean_rmse": 126.8010843817393,
+      "mean_mae": 76.41100419362387,
+      "mean_r2": 0.9700564444819302,
+      "median_r2": 0.992306855586315
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 28907.408203125,
+      "rmse": 170.02178955078125,
+      "mae": 74.0248031616211,
+      "r2": 0.973457663886337,
+      "num_points": 724
+    },
+    "task_level": {
+      "mean_mse": 28943.662639567057,
+      "mean_rmse": 125.75169520060221,
+      "mean_mae": 74.42238578796386,
+      "mean_r2": 0.9673664470823848,
+      "median_r2": 0.990894931851958
+    }
+  },
+  "target_task_count": 150,
+  "parameter_dim": 609
+}
+{
+  "source_limit": 150,
+  "target_limit": 150,
+  "seed": 42,
+  "source_params_shape": [
+    150,
+    609
+  ],
+  "generated_params_shape": [
+    150,
+    1,
+    609
+  ],
+  "target_finetuned_params_shape": [
+    150,
+    609
+  ],
+  "sample_only": true,
+  "source_task_ids": [
+    61,
+    259,
+    292,
+    313,
+    365,
+    492,
+    531,
+    566,
+    638,
+    667,
+    713,
+    740,
+    763,
+    767,
+    782,
+    815,
+    964,
+    1065,
+    1087,
+    1173,
+    1176,
+    1289,
+    1346,
+    1377,
+    1518,
+    1585,
+    1625,
+    1673,
+    1679,
+    1811,
+    1892,
+    1900,
+    1975,
+    2011,
+    2066,
+    2307,
+    2330,
+    2334,
+    2420,
+    2563,
+    2619,
+    2725,
+    2765,
+    2931,
+    2957,
+    3038,
+    3065,
+    3085,
+    3099,
+    3251,
+    3350,
+    3435,
+    3448,
+    3595,
+    3643,
+    3651,
+    3663,
+    3685,
+    3692,
+    3701,
+    3719,
+    3746,
+    3751,
+    3860,
+    3875,
+    3898,
+    3929,
+    3964,
+    3967,
+    3983,
+    4158,
+    4162,
+    4253,
+    4267,
+    4374,
+    4541,
+    4566,
+    4620,
+    4666,
+    4673,
+    4715,
+    4728,
+    4761,
+    4765,
+    4785,
+    4842,
+    5084,
+    5266,
+    5279,
+    5346,
+    5349,
+    5359,
+    5433,
+    5510,
+    5588,
+    5611,
+    5627,
+    5658,
+    5708,
+    5730,
+    5747,
+    5792,
+    5843,
+    5871,
+    5929,
+    5964,
+    6114,
+    6212,
+    6226,
+    6322,
+    6326,
+    6344,
+    6423,
+    6439,
+    6445,
+    6497,
+    6504,
+    6535,
+    6558,
+    6565,
+    6613,
+    6659,
+    6695,
+    6703,
+    6751,
+    6761,
+    6850,
+    6899,
+    6940,
+    6979,
+    6980,
+    6984,
+    6994,
+    7062,
+    7129,
+    7153,
+    7202,
+    7206,
+    7398,
+    7453,
+    7537,
+    7574,
+    7711,
+    7712,
+    7878,
+    8090,
+    8099,
+    8107,
+    8293,
+    8381
+  ],
+  "target_task_ids": [
+    33,
+    34,
+    107,
+    117,
+    166,
+    279,
+    281,
+    363,
+    389,
+    423,
+    621,
+    642,
+    694,
+    695,
+    782,
+    881,
+    990,
+    997,
+    1035,
+    1054,
+    1056,
+    1070,
+    1107,
+    1168,
+    1224,
+    1273,
+    1296,
+    1389,
+    1442,
+    1467,
+    1576,
+    1632,
+    1736,
+    1867,
+    2061,
+    2192,
+    2237,
+    2276,
+    2296,
+    2319,
+    2345,
+    2388,
+    2424,
+    2508,
+    2546,
+    2573,
+    2692,
+    2711,
+    2720,
+    2747,
+    2857,
+    2858,
+    3158,
+    3159,
+    3236,
+    3266,
+    3331,
+    3332,
+    3337,
+    3474,
+    3485,
+    3492,
+    3500,
+    3514,
+    3519,
+    3566,
+    3751,
+    3772,
+    3805,
+    3828,
+    3858,
+    3919,
+    4048,
+    4188,
+    4189,
+    4193,
+    4225,
+    4448,
+    4461,
+    4524,
+    4565,
+    4607,
+    4647,
+    4717,
+    4776,
+    4792,
+    4826,
+    4849,
+    4869,
+    4877,
+    4929,
+    4949,
+    5043,
+    5101,
+    5112,
+    5144,
+    5316,
+    5381,
+    5384,
+    5414,
+    5534,
+    5617,
+    5658,
+    5694,
+    5816,
+    5841,
+    5843,
+    5858,
+    5887,
+    6248,
+    6299,
+    6359,
+    6407,
+    6425,
+    6466,
+    6743,
+    6752,
+    6762,
+    6839,
+    6878,
+    6970,
+    6983,
+    6987,
+    7035,
+    7063,
+    7090,
+    7141,
+    7214,
+    7257,
+    7309,
+    7333,
+    7411,
+    7422,
+    7439,
+    7451,
+    7578,
+    7764,
+    7785,
+    7869,
+    7884,
+    7923,
+    7931,
+    7948,
+    7971,
+    8015,
+    8259,
+    8325,
+    8330,
+    8407,
+    8441
+  ],
+  "source_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_tasks_150_seed42.pkl",
+  "target_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_tasks_150_seed43.pkl",
+  "source_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv",
+  "target_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv"
+}
+sample transfer test point-level: {'mse': 28907.408203125, 'rmse': 170.02178955078125, 'mae': 74.0248031616211, 'r2': 0.973457663886337, 'num_points': 724}
+sample transfer test task-level: {'mean_mse': 28943.662639567057, 'mean_rmse': 125.75169520060221, 'mean_mae': 74.42238578796386, 'mean_r2': 0.9673664470823848, 'median_r2': 0.990894931851958}
+[2026-05-06 14:43:14] model_4: sample tanh_32x16_e140_g100_r1 point_r2=0.9735 task_mean_r2=0.9674
+[2026-05-06 14:43:14] model_4: sample tuning reached stop threshold with tanh_32x16_e140_g100_r1
+[2026-05-06 14:43:14] model_4: full attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_4.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 303852,
+  "source_num_points_mean": 23.739583333333332,
+  "target_num_points_mean": 24.529474431818183,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 8
+trained source tasks 1/8448
+trained source tasks 200/8448
+trained source tasks 400/8448
+trained source tasks 600/8448
+trained source tasks 800/8448
+trained source tasks 1000/8448
+trained source tasks 1200/8448
+trained source tasks 1400/8448
+trained source tasks 1600/8448
+trained source tasks 1800/8448
+trained source tasks 2000/8448
+trained source tasks 2200/8448
+trained source tasks 2400/8448
+trained source tasks 2600/8448
+trained source tasks 2800/8448
+trained source tasks 3000/8448
+trained source tasks 3200/8448
+trained source tasks 3400/8448
+trained source tasks 3600/8448
+trained source tasks 3800/8448
+trained source tasks 4000/8448
+trained source tasks 4200/8448
+trained source tasks 4400/8448
+trained source tasks 4600/8448
+trained source tasks 4800/8448
+trained source tasks 5000/8448
+trained source tasks 5200/8448
+trained source tasks 5400/8448
+trained source tasks 5600/8448
+trained source tasks 5800/8448
+trained source tasks 6000/8448
+trained source tasks 6200/8448
+trained source tasks 6400/8448
+trained source tasks 6600/8448
+trained source tasks 6800/8448
+trained source tasks 7000/8448
+trained source tasks 7200/8448
+trained source tasks 7400/8448
+trained source tasks 7600/8448
+trained source tasks 7800/8448
+trained source tasks 8000/8448
+trained source tasks 8200/8448
+trained source tasks 8400/8448
+trained source tasks 8448/8448
+{
+  "source_task_count": 8448,
+  "parameter_dim": 609,
+  "mean_train_mse": 5401.2213875930665,
+  "mean_train_rmse": 51.06443914858921,
+  "mean_train_mae": 26.33605565221726,
+  "mean_train_r2": 0.9956321306591267
+}
+2026-05-06 14:58:11: begin training
+training_seq.shape (8448, 1, 609)
+condition.shape (8448, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=62401, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\full\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\full\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\full\\tanh_32x16_e140_g100_r1\\target_conditions.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\full\\tanh_32x16_e140_g100_r1\\source_conditions.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\full\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_4\\full\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 8448 samples in 132 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 1.307536244392395
+training complete
+final sampling: generating 8448 samples in 132 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 8
+finetuned target tasks 1/8448
+finetuned target tasks 200/8448
+finetuned target tasks 400/8448
+finetuned target tasks 600/8448
+finetuned target tasks 800/8448
+finetuned target tasks 1000/8448
+finetuned target tasks 1200/8448
+finetuned target tasks 1400/8448
+finetuned target tasks 1600/8448
+finetuned target tasks 1800/8448
+finetuned target tasks 2000/8448
+finetuned target tasks 2200/8448
+finetuned target tasks 2400/8448
+finetuned target tasks 2600/8448
+finetuned target tasks 2800/8448
+finetuned target tasks 3000/8448
+finetuned target tasks 3200/8448
+finetuned target tasks 3400/8448
+finetuned target tasks 3600/8448
+finetuned target tasks 3800/8448
+finetuned target tasks 4000/8448
+finetuned target tasks 4200/8448
+finetuned target tasks 4400/8448
+finetuned target tasks 4600/8448
+finetuned target tasks 4800/8448
+finetuned target tasks 5000/8448
+finetuned target tasks 5200/8448
+finetuned target tasks 5400/8448
+finetuned target tasks 5600/8448
+finetuned target tasks 5800/8448
+finetuned target tasks 6000/8448
+finetuned target tasks 6200/8448
+finetuned target tasks 6400/8448
+finetuned target tasks 6600/8448
+finetuned target tasks 6800/8448
+finetuned target tasks 7000/8448
+finetuned target tasks 7200/8448
+finetuned target tasks 7400/8448
+finetuned target tasks 7600/8448
+finetuned target tasks 7800/8448
+finetuned target tasks 8000/8448
+finetuned target tasks 8200/8448
+finetuned target tasks 8400/8448
+finetuned target tasks 8448/8448
+{
+  "task_count": 8448,
+  "train": {
+    "point_level": {
+      "mse": 19505.87890625,
+      "rmse": 139.6634521484375,
+      "mae": 57.554725646972656,
+      "r2": 0.982178747076496,
+      "num_points": 124331
+    },
+    "task_level": {
+      "mean_mse": 19959.07125986828,
+      "mean_rmse": 103.3558813201627,
+      "mean_mae": 58.18734408403345,
+      "mean_r2": 0.9822169130338454,
+      "median_r2": 0.9947608367986576
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 24774.984375,
+      "rmse": 157.4007110595703,
+      "mae": 72.23639678955078,
+      "r2": 0.9780664015882778,
+      "num_points": 41447
+    },
+    "task_level": {
+      "mean_mse": 25463.52367905674,
+      "mean_rmse": 122.18606311181617,
+      "mean_mae": 73.42697851924987,
+      "mean_r2": 0.9756554952677998,
+      "median_r2": 0.9915273949307768
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 28834.48046875,
+      "rmse": 169.80718994140625,
+      "mae": 72.59545135498047,
+      "r2": 0.9737427721848402,
+      "num_points": 41447
+    },
+    "task_level": {
+      "mean_mse": 29031.752943340885,
+      "mean_rmse": 125.3272174311322,
+      "mean_mae": 73.31625218110892,
+      "mean_r2": 0.9687631636634394,
+      "median_r2": 0.990913194300946
+    }
+  },
+  "target_task_count": 8448,
+  "parameter_dim": 609
+}
+[2026-05-06 15:11:27] model_4: full tanh_32x16_e140_g100_r1 point_r2=0.9737 task_mean_r2=0.9688
+[2026-05-06 15:11:27] model_4: passed full threshold with tanh_32x16_e140_g100_r1
+[2026-05-06 15:11:27] model_5: starting sample tuning
+[2026-05-06 15:11:27] model_5: sample attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_5.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 299799,
+  "source_num_points_mean": 23.380326704545453,
+  "target_num_points_mean": 24.310132575757574,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 4
+trained source tasks 1/150
+trained source tasks 150/150
+{
+  "source_task_count": 150,
+  "parameter_dim": 609,
+  "mean_train_mse": 2351.952830950419,
+  "mean_train_rmse": 42.6500163380305,
+  "mean_train_mae": 20.74963973283768,
+  "mean_train_r2": 0.9981264786261661
+}
+2026-05-06 15:12:08: begin training
+training_seq.shape (150, 1, 609)
+condition.shape (150, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=52501, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 150 samples in 3 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 0.9859773516654968
+training complete
+final sampling: generating 150 samples in 3 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 4
+finetuned target tasks 1/150
+finetuned target tasks 150/150
+{
+  "task_count": 150,
+  "train": {
+    "point_level": {
+      "mse": 24456.3046875,
+      "rmse": 156.38511657714844,
+      "mae": 58.81830978393555,
+      "r2": 0.9785455119433837,
+      "num_points": 2202
+    },
+    "task_level": {
+      "mean_mse": 23942.317979065516,
+      "mean_rmse": 106.24323934435844,
+      "mean_mae": 58.411225192546844,
+      "mean_r2": 0.9780440765161008,
+      "median_r2": 0.9953164029330567
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 29565.611328125,
+      "rmse": 171.946533203125,
+      "mae": 76.34850311279297,
+      "r2": 0.9739692620613392,
+      "num_points": 730
+    },
+    "task_level": {
+      "mean_mse": 30643.44278421402,
+      "mean_rmse": 131.53256172815958,
+      "mean_mae": 78.3120521291097,
+      "mean_r2": 0.9716675129080299,
+      "median_r2": 0.9894739043535359
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 39111.0859375,
+      "rmse": 197.76522827148438,
+      "mae": 82.83343505859375,
+      "r2": 0.9643150437624236,
+      "num_points": 730
+    },
+    "task_level": {
+      "mean_mse": 39266.01205525716,
+      "mean_rmse": 145.80974223454794,
+      "mean_mae": 83.76970302581788,
+      "mean_r2": 0.9590037055894634,
+      "median_r2": 0.986900366001792
+    }
+  },
+  "target_task_count": 150,
+  "parameter_dim": 609
+}
+{
+  "source_limit": 150,
+  "target_limit": 150,
+  "seed": 42,
+  "source_params_shape": [
+    150,
+    609
+  ],
+  "generated_params_shape": [
+    150,
+    1,
+    609
+  ],
+  "target_finetuned_params_shape": [
+    150,
+    609
+  ],
+  "sample_only": true,
+  "source_task_ids": [
+    61,
+    259,
+    292,
+    313,
+    365,
+    492,
+    531,
+    566,
+    638,
+    667,
+    713,
+    740,
+    763,
+    767,
+    782,
+    815,
+    964,
+    1065,
+    1087,
+    1173,
+    1176,
+    1289,
+    1346,
+    1377,
+    1518,
+    1585,
+    1625,
+    1673,
+    1679,
+    1811,
+    1892,
+    1900,
+    1975,
+    2011,
+    2066,
+    2307,
+    2330,
+    2334,
+    2420,
+    2563,
+    2619,
+    2725,
+    2765,
+    2931,
+    2957,
+    3038,
+    3065,
+    3085,
+    3099,
+    3251,
+    3350,
+    3435,
+    3448,
+    3595,
+    3643,
+    3651,
+    3663,
+    3685,
+    3692,
+    3701,
+    3719,
+    3746,
+    3751,
+    3860,
+    3875,
+    3898,
+    3929,
+    3964,
+    3967,
+    3983,
+    4158,
+    4162,
+    4253,
+    4267,
+    4374,
+    4541,
+    4566,
+    4620,
+    4666,
+    4673,
+    4715,
+    4728,
+    4761,
+    4765,
+    4785,
+    4842,
+    5084,
+    5266,
+    5279,
+    5346,
+    5349,
+    5359,
+    5433,
+    5510,
+    5588,
+    5611,
+    5627,
+    5658,
+    5708,
+    5730,
+    5747,
+    5792,
+    5843,
+    5871,
+    5929,
+    5964,
+    6114,
+    6212,
+    6226,
+    6322,
+    6326,
+    6344,
+    6423,
+    6439,
+    6445,
+    6497,
+    6504,
+    6535,
+    6558,
+    6565,
+    6613,
+    6659,
+    6695,
+    6703,
+    6751,
+    6761,
+    6850,
+    6899,
+    6940,
+    6979,
+    6980,
+    6984,
+    6994,
+    7062,
+    7129,
+    7153,
+    7202,
+    7206,
+    7398,
+    7453,
+    7537,
+    7574,
+    7711,
+    7712,
+    7878,
+    8090,
+    8099,
+    8107,
+    8293,
+    8381
+  ],
+  "target_task_ids": [
+    33,
+    34,
+    107,
+    117,
+    166,
+    279,
+    281,
+    363,
+    389,
+    423,
+    621,
+    642,
+    694,
+    695,
+    782,
+    881,
+    990,
+    997,
+    1035,
+    1054,
+    1056,
+    1070,
+    1107,
+    1168,
+    1224,
+    1273,
+    1296,
+    1389,
+    1442,
+    1467,
+    1576,
+    1632,
+    1736,
+    1867,
+    2061,
+    2192,
+    2237,
+    2276,
+    2296,
+    2319,
+    2345,
+    2388,
+    2424,
+    2508,
+    2546,
+    2573,
+    2692,
+    2711,
+    2720,
+    2747,
+    2857,
+    2858,
+    3158,
+    3159,
+    3236,
+    3266,
+    3331,
+    3332,
+    3337,
+    3474,
+    3485,
+    3492,
+    3500,
+    3514,
+    3519,
+    3566,
+    3751,
+    3772,
+    3805,
+    3828,
+    3858,
+    3919,
+    4048,
+    4188,
+    4189,
+    4193,
+    4225,
+    4448,
+    4461,
+    4524,
+    4565,
+    4607,
+    4647,
+    4717,
+    4776,
+    4792,
+    4826,
+    4849,
+    4869,
+    4877,
+    4929,
+    4949,
+    5043,
+    5101,
+    5112,
+    5144,
+    5316,
+    5381,
+    5384,
+    5414,
+    5534,
+    5617,
+    5658,
+    5694,
+    5816,
+    5841,
+    5843,
+    5858,
+    5887,
+    6248,
+    6299,
+    6359,
+    6407,
+    6425,
+    6466,
+    6743,
+    6752,
+    6762,
+    6839,
+    6878,
+    6970,
+    6983,
+    6987,
+    7035,
+    7063,
+    7090,
+    7141,
+    7214,
+    7257,
+    7309,
+    7333,
+    7411,
+    7422,
+    7439,
+    7451,
+    7578,
+    7764,
+    7785,
+    7869,
+    7884,
+    7923,
+    7931,
+    7948,
+    7971,
+    8015,
+    8259,
+    8325,
+    8330,
+    8407,
+    8441
+  ],
+  "source_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_tasks_150_seed42.pkl",
+  "target_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_tasks_150_seed43.pkl",
+  "source_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv",
+  "target_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv"
+}
+sample transfer test point-level: {'mse': 39111.0859375, 'rmse': 197.76522827148438, 'mae': 82.83343505859375, 'r2': 0.9643150437624236, 'num_points': 730}
+sample transfer test task-level: {'mean_mse': 39266.01205525716, 'mean_rmse': 145.80974223454794, 'mean_mae': 83.76970302581788, 'mean_r2': 0.9590037055894634, 'median_r2': 0.986900366001792}
+[2026-05-06 15:12:36] model_5: sample tanh_32x16_e140_g100_r1 point_r2=0.9643 task_mean_r2=0.9590
+[2026-05-06 15:12:36] model_5: sample tuning reached stop threshold with tanh_32x16_e140_g100_r1
+[2026-05-06 15:12:36] model_5: full attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_5.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 299799,
+  "source_num_points_mean": 23.380326704545453,
+  "target_num_points_mean": 24.310132575757574,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 8
+trained source tasks 1/8448
+trained source tasks 200/8448
+trained source tasks 400/8448
+trained source tasks 600/8448
+trained source tasks 800/8448
+trained source tasks 1000/8448
+trained source tasks 1200/8448
+trained source tasks 1400/8448
+trained source tasks 1600/8448
+trained source tasks 1800/8448
+trained source tasks 2000/8448
+trained source tasks 2200/8448
+trained source tasks 2400/8448
+trained source tasks 2600/8448
+trained source tasks 2800/8448
+trained source tasks 3000/8448
+trained source tasks 3200/8448
+trained source tasks 3400/8448
+trained source tasks 3600/8448
+trained source tasks 3800/8448
+trained source tasks 4000/8448
+trained source tasks 4200/8448
+trained source tasks 4400/8448
+trained source tasks 4600/8448
+trained source tasks 4800/8448
+trained source tasks 5000/8448
+trained source tasks 5200/8448
+trained source tasks 5400/8448
+trained source tasks 5600/8448
+trained source tasks 5800/8448
+trained source tasks 6000/8448
+trained source tasks 6200/8448
+trained source tasks 6400/8448
+trained source tasks 6600/8448
+trained source tasks 6800/8448
+trained source tasks 7000/8448
+trained source tasks 7200/8448
+trained source tasks 7400/8448
+trained source tasks 7600/8448
+trained source tasks 7800/8448
+trained source tasks 8000/8448
+trained source tasks 8200/8448
+trained source tasks 8400/8448
+trained source tasks 8448/8448
+{
+  "source_task_count": 8448,
+  "parameter_dim": 609,
+  "mean_train_mse": 5034.829429962357,
+  "mean_train_rmse": 45.41270209549464,
+  "mean_train_mae": 22.48558209737089,
+  "mean_train_r2": 0.9961439291764306
+}
+2026-05-06 15:28:25: begin training
+training_seq.shape (8448, 1, 609)
+condition.shape (8448, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=62501, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\full\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\full\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\full\\tanh_32x16_e140_g100_r1\\target_conditions.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\full\\tanh_32x16_e140_g100_r1\\source_conditions.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\full\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\full\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 8448 samples in 132 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 1.1607450246810913
+training complete
+final sampling: generating 8448 samples in 132 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 8
+finetuned target tasks 1/8448
+finetuned target tasks 200/8448
+finetuned target tasks 400/8448
+finetuned target tasks 600/8448
+finetuned target tasks 800/8448
+finetuned target tasks 1000/8448
+finetuned target tasks 1200/8448
+finetuned target tasks 1400/8448
+finetuned target tasks 1600/8448
+finetuned target tasks 1800/8448
+finetuned target tasks 2000/8448
+finetuned target tasks 2200/8448
+finetuned target tasks 2400/8448
+finetuned target tasks 2600/8448
+finetuned target tasks 2800/8448
+finetuned target tasks 3000/8448
+finetuned target tasks 3200/8448
+finetuned target tasks 3400/8448
+finetuned target tasks 3600/8448
+finetuned target tasks 3800/8448
+finetuned target tasks 4000/8448
+finetuned target tasks 4200/8448
+finetuned target tasks 4400/8448
+finetuned target tasks 4600/8448
+finetuned target tasks 4800/8448
+finetuned target tasks 5000/8448
+finetuned target tasks 5200/8448
+finetuned target tasks 5400/8448
+finetuned target tasks 5600/8448
+finetuned target tasks 5800/8448
+finetuned target tasks 6000/8448
+finetuned target tasks 6200/8448
+finetuned target tasks 6400/8448
+finetuned target tasks 6600/8448
+finetuned target tasks 6800/8448
+finetuned target tasks 7000/8448
+finetuned target tasks 7200/8448
+finetuned target tasks 7400/8448
+finetuned target tasks 7600/8448
+finetuned target tasks 7800/8448
+finetuned target tasks 8000/8448
+finetuned target tasks 8200/8448
+finetuned target tasks 8400/8448
+finetuned target tasks 8448/8448
+{
+  "task_count": 8448,
+  "train": {
+    "point_level": {
+      "mse": 20862.56640625,
+      "rmse": 144.4387969970703,
+      "mae": 59.01994705200195,
+      "r2": 0.9818171578235485,
+      "num_points": 123312
+    },
+    "task_level": {
+      "mean_mse": 21224.47365505836,
+      "mean_rmse": 108.37702251063853,
+      "mean_mae": 59.545214564579624,
+      "mean_r2": 0.9816185184697975,
+      "median_r2": 0.9943289847002063
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 28764.30078125,
+      "rmse": 169.6004180908203,
+      "mae": 77.2569808959961,
+      "r2": 0.97474263939672,
+      "num_points": 41030
+    },
+    "task_level": {
+      "mean_mse": 29088.953563627027,
+      "mean_rmse": 130.30584645197925,
+      "mean_mae": 77.99370402425076,
+      "mean_r2": 0.9727392951010877,
+      "median_r2": 0.9901406716333792
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 31576.05859375,
+      "rmse": 177.696533203125,
+      "mae": 77.49824523925781,
+      "r2": 0.9708072206688118,
+      "num_points": 41030
+    },
+    "task_level": {
+      "mean_mse": 31320.832584461325,
+      "mean_rmse": 135.17025220821697,
+      "mean_mae": 77.5973134812278,
+      "mean_r2": 0.9673519379077653,
+      "median_r2": 0.9889364033845364
+    }
+  },
+  "target_task_count": 8448,
+  "parameter_dim": 609
+}
+[2026-05-06 15:41:04] model_5: full tanh_32x16_e140_g100_r1 point_r2=0.9708 task_mean_r2=0.9674
+[2026-05-06 15:41:04] model_5: passed full threshold with tanh_32x16_e140_g100_r1
+[2026-05-06 15:41:04] model_6: starting sample tuning
+[2026-05-06 15:41:04] model_6: sample attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_6.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 298607,
+  "source_num_points_mean": 23.201349431818183,
+  "target_num_points_mean": 24.279711174242426,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 4
+trained source tasks 1/150
+trained source tasks 150/150
+{
+  "source_task_count": 150,
+  "parameter_dim": 609,
+  "mean_train_mse": 1576.6571000552178,
+  "mean_train_rmse": 34.13963672320048,
+  "mean_train_mae": 16.68643904129664,
+  "mean_train_r2": 0.9986338560846413
+}
+2026-05-06 15:41:46: begin training
+training_seq.shape (150, 1, 609)
+condition.shape (150, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=52601, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 150 samples in 3 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 1.2781752347946167
+training complete
+final sampling: generating 150 samples in 3 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 4
+finetuned target tasks 1/150
+finetuned target tasks 150/150
+{
+  "task_count": 150,
+  "train": {
+    "point_level": {
+      "mse": 25488.5625,
+      "rmse": 159.65138244628906,
+      "mae": 62.89476013183594,
+      "r2": 0.9764292215735196,
+      "num_points": 2173
+    },
+    "task_level": {
+      "mean_mse": 25965.985952809653,
+      "mean_rmse": 111.85755851427714,
+      "mean_mae": 63.29406787872315,
+      "mean_r2": 0.9769854578652558,
+      "median_r2": 0.9953540819844267
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 34780.265625,
+      "rmse": 186.4946746826172,
+      "mae": 78.1474380493164,
+      "r2": 0.9662885142538498,
+      "num_points": 726
+    },
+    "task_level": {
+      "mean_mse": 36547.08516245524,
+      "mean_rmse": 129.83560428619384,
+      "mean_mae": 79.35690081596374,
+      "mean_r2": 0.9659685057821829,
+      "median_r2": 0.9909350856966395
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 39952.45703125,
+      "rmse": 199.881103515625,
+      "mae": 79.21729278564453,
+      "r2": 0.9569721493030848,
+      "num_points": 726
+    },
+    "task_level": {
+      "mean_mse": 42004.52183573405,
+      "mean_rmse": 134.46367870330812,
+      "mean_mae": 79.84099664052327,
+      "mean_r2": 0.9434378331105885,
+      "median_r2": 0.9899383293577038
+    }
+  },
+  "target_task_count": 150,
+  "parameter_dim": 609
+}
+{
+  "source_limit": 150,
+  "target_limit": 150,
+  "seed": 42,
+  "source_params_shape": [
+    150,
+    609
+  ],
+  "generated_params_shape": [
+    150,
+    1,
+    609
+  ],
+  "target_finetuned_params_shape": [
+    150,
+    609
+  ],
+  "sample_only": true,
+  "source_task_ids": [
+    61,
+    259,
+    292,
+    313,
+    365,
+    492,
+    531,
+    566,
+    638,
+    667,
+    713,
+    740,
+    763,
+    767,
+    782,
+    815,
+    964,
+    1065,
+    1087,
+    1173,
+    1176,
+    1289,
+    1346,
+    1377,
+    1518,
+    1585,
+    1625,
+    1673,
+    1679,
+    1811,
+    1892,
+    1900,
+    1975,
+    2011,
+    2066,
+    2307,
+    2330,
+    2334,
+    2420,
+    2563,
+    2619,
+    2725,
+    2765,
+    2931,
+    2957,
+    3038,
+    3065,
+    3085,
+    3099,
+    3251,
+    3350,
+    3435,
+    3448,
+    3595,
+    3643,
+    3651,
+    3663,
+    3685,
+    3692,
+    3701,
+    3719,
+    3746,
+    3751,
+    3860,
+    3875,
+    3898,
+    3929,
+    3964,
+    3967,
+    3983,
+    4158,
+    4162,
+    4253,
+    4267,
+    4374,
+    4541,
+    4566,
+    4620,
+    4666,
+    4673,
+    4715,
+    4728,
+    4761,
+    4765,
+    4785,
+    4842,
+    5084,
+    5266,
+    5279,
+    5346,
+    5349,
+    5359,
+    5433,
+    5510,
+    5588,
+    5611,
+    5627,
+    5658,
+    5708,
+    5730,
+    5747,
+    5792,
+    5843,
+    5871,
+    5929,
+    5964,
+    6114,
+    6212,
+    6226,
+    6322,
+    6326,
+    6344,
+    6423,
+    6439,
+    6445,
+    6497,
+    6504,
+    6535,
+    6558,
+    6565,
+    6613,
+    6659,
+    6695,
+    6703,
+    6751,
+    6761,
+    6850,
+    6899,
+    6940,
+    6979,
+    6980,
+    6984,
+    6994,
+    7062,
+    7129,
+    7153,
+    7202,
+    7206,
+    7398,
+    7453,
+    7537,
+    7574,
+    7711,
+    7712,
+    7878,
+    8090,
+    8099,
+    8107,
+    8293,
+    8381
+  ],
+  "target_task_ids": [
+    33,
+    34,
+    107,
+    117,
+    166,
+    279,
+    281,
+    363,
+    389,
+    423,
+    621,
+    642,
+    694,
+    695,
+    782,
+    881,
+    990,
+    997,
+    1035,
+    1054,
+    1056,
+    1070,
+    1107,
+    1168,
+    1224,
+    1273,
+    1296,
+    1389,
+    1442,
+    1467,
+    1576,
+    1632,
+    1736,
+    1867,
+    2061,
+    2192,
+    2237,
+    2276,
+    2296,
+    2319,
+    2345,
+    2388,
+    2424,
+    2508,
+    2546,
+    2573,
+    2692,
+    2711,
+    2720,
+    2747,
+    2857,
+    2858,
+    3158,
+    3159,
+    3236,
+    3266,
+    3331,
+    3332,
+    3337,
+    3474,
+    3485,
+    3492,
+    3500,
+    3514,
+    3519,
+    3566,
+    3751,
+    3772,
+    3805,
+    3828,
+    3858,
+    3919,
+    4048,
+    4188,
+    4189,
+    4193,
+    4225,
+    4448,
+    4461,
+    4524,
+    4565,
+    4607,
+    4647,
+    4717,
+    4776,
+    4792,
+    4826,
+    4849,
+    4869,
+    4877,
+    4929,
+    4949,
+    5043,
+    5101,
+    5112,
+    5144,
+    5316,
+    5381,
+    5384,
+    5414,
+    5534,
+    5617,
+    5658,
+    5694,
+    5816,
+    5841,
+    5843,
+    5858,
+    5887,
+    6248,
+    6299,
+    6359,
+    6407,
+    6425,
+    6466,
+    6743,
+    6752,
+    6762,
+    6839,
+    6878,
+    6970,
+    6983,
+    6987,
+    7035,
+    7063,
+    7090,
+    7141,
+    7214,
+    7257,
+    7309,
+    7333,
+    7411,
+    7422,
+    7439,
+    7451,
+    7578,
+    7764,
+    7785,
+    7869,
+    7884,
+    7923,
+    7931,
+    7948,
+    7971,
+    8015,
+    8259,
+    8325,
+    8330,
+    8407,
+    8441
+  ],
+  "source_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_tasks_150_seed42.pkl",
+  "target_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_tasks_150_seed43.pkl",
+  "source_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv",
+  "target_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv"
+}
+sample transfer test point-level: {'mse': 39952.45703125, 'rmse': 199.881103515625, 'mae': 79.21729278564453, 'r2': 0.9569721493030848, 'num_points': 726}
+sample transfer test task-level: {'mean_mse': 42004.52183573405, 'mean_rmse': 134.46367870330812, 'mean_mae': 79.84099664052327, 'mean_r2': 0.9434378331105885, 'median_r2': 0.9899383293577038}
+[2026-05-06 15:42:14] model_6: sample tanh_32x16_e140_g100_r1 point_r2=0.9570 task_mean_r2=0.9434
+[2026-05-06 15:42:14] model_6: sample attempt 2 with tanh_32x16_e160_g120_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_6.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 298607,
+  "source_num_points_mean": 23.201349431818183,
+  "target_num_points_mean": 24.279711174242426,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 4
+trained source tasks 1/150
+trained source tasks 150/150
+{
+  "source_task_count": 150,
+  "parameter_dim": 609,
+  "mean_train_mse": 1465.0243017633757,
+  "mean_train_rmse": 32.637950196266175,
+  "mean_train_mae": 15.978635971546174,
+  "mean_train_r2": 0.9987341904229756
+}
+2026-05-06 15:42:58: begin training
+training_seq.shape (150, 1, 609)
+condition.shape (150, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=120, expIndex=52602, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e160_g120_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e160_g120_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e160_g120_r1\\subsets\\target_conditions_150_seed43.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e160_g120_r1\\subsets\\source_conditions_150_seed42.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e160_g120_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e160_g120_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 150 samples in 3 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 1.0589879751205444
+training complete
+final sampling: generating 150 samples in 3 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 4
+finetuned target tasks 1/150
+finetuned target tasks 150/150
+{
+  "task_count": 150,
+  "train": {
+    "point_level": {
+      "mse": 25154.61328125,
+      "rmse": 158.60206604003906,
+      "mae": 61.07887268066406,
+      "r2": 0.9767380462762739,
+      "num_points": 2173
+    },
+    "task_level": {
+      "mean_mse": 25401.377009449006,
+      "mean_rmse": 108.35921003659566,
+      "mean_mae": 60.95426592906316,
+      "mean_r2": 0.9768955785474744,
+      "median_r2": 0.9952740053191904
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 27889.8671875,
+      "rmse": 167.00259399414062,
+      "mae": 74.669921875,
+      "r2": 0.9729671721883724,
+      "num_points": 726
+    },
+    "task_level": {
+      "mean_mse": 28397.420346323648,
+      "mean_rmse": 121.5515578397115,
+      "mean_mae": 75.09004210789999,
+      "mean_r2": 0.9714261468553942,
+      "median_r2": 0.9913405645823935
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 30197.234375,
+      "rmse": 173.7735137939453,
+      "mae": 76.90699005126953,
+      "r2": 0.9674782945227651,
+      "num_points": 726
+    },
+    "task_level": {
+      "mean_mse": 29311.455337677,
+      "mean_rmse": 127.72877128601074,
+      "mean_mae": 76.36819400469462,
+      "mean_r2": 0.9671588797312813,
+      "median_r2": 0.9886764829848228
+    }
+  },
+  "target_task_count": 150,
+  "parameter_dim": 609
+}
+{
+  "source_limit": 150,
+  "target_limit": 150,
+  "seed": 42,
+  "source_params_shape": [
+    150,
+    609
+  ],
+  "generated_params_shape": [
+    150,
+    1,
+    609
+  ],
+  "target_finetuned_params_shape": [
+    150,
+    609
+  ],
+  "sample_only": true,
+  "source_task_ids": [
+    61,
+    259,
+    292,
+    313,
+    365,
+    492,
+    531,
+    566,
+    638,
+    667,
+    713,
+    740,
+    763,
+    767,
+    782,
+    815,
+    964,
+    1065,
+    1087,
+    1173,
+    1176,
+    1289,
+    1346,
+    1377,
+    1518,
+    1585,
+    1625,
+    1673,
+    1679,
+    1811,
+    1892,
+    1900,
+    1975,
+    2011,
+    2066,
+    2307,
+    2330,
+    2334,
+    2420,
+    2563,
+    2619,
+    2725,
+    2765,
+    2931,
+    2957,
+    3038,
+    3065,
+    3085,
+    3099,
+    3251,
+    3350,
+    3435,
+    3448,
+    3595,
+    3643,
+    3651,
+    3663,
+    3685,
+    3692,
+    3701,
+    3719,
+    3746,
+    3751,
+    3860,
+    3875,
+    3898,
+    3929,
+    3964,
+    3967,
+    3983,
+    4158,
+    4162,
+    4253,
+    4267,
+    4374,
+    4541,
+    4566,
+    4620,
+    4666,
+    4673,
+    4715,
+    4728,
+    4761,
+    4765,
+    4785,
+    4842,
+    5084,
+    5266,
+    5279,
+    5346,
+    5349,
+    5359,
+    5433,
+    5510,
+    5588,
+    5611,
+    5627,
+    5658,
+    5708,
+    5730,
+    5747,
+    5792,
+    5843,
+    5871,
+    5929,
+    5964,
+    6114,
+    6212,
+    6226,
+    6322,
+    6326,
+    6344,
+    6423,
+    6439,
+    6445,
+    6497,
+    6504,
+    6535,
+    6558,
+    6565,
+    6613,
+    6659,
+    6695,
+    6703,
+    6751,
+    6761,
+    6850,
+    6899,
+    6940,
+    6979,
+    6980,
+    6984,
+    6994,
+    7062,
+    7129,
+    7153,
+    7202,
+    7206,
+    7398,
+    7453,
+    7537,
+    7574,
+    7711,
+    7712,
+    7878,
+    8090,
+    8099,
+    8107,
+    8293,
+    8381
+  ],
+  "target_task_ids": [
+    33,
+    34,
+    107,
+    117,
+    166,
+    279,
+    281,
+    363,
+    389,
+    423,
+    621,
+    642,
+    694,
+    695,
+    782,
+    881,
+    990,
+    997,
+    1035,
+    1054,
+    1056,
+    1070,
+    1107,
+    1168,
+    1224,
+    1273,
+    1296,
+    1389,
+    1442,
+    1467,
+    1576,
+    1632,
+    1736,
+    1867,
+    2061,
+    2192,
+    2237,
+    2276,
+    2296,
+    2319,
+    2345,
+    2388,
+    2424,
+    2508,
+    2546,
+    2573,
+    2692,
+    2711,
+    2720,
+    2747,
+    2857,
+    2858,
+    3158,
+    3159,
+    3236,
+    3266,
+    3331,
+    3332,
+    3337,
+    3474,
+    3485,
+    3492,
+    3500,
+    3514,
+    3519,
+    3566,
+    3751,
+    3772,
+    3805,
+    3828,
+    3858,
+    3919,
+    4048,
+    4188,
+    4189,
+    4193,
+    4225,
+    4448,
+    4461,
+    4524,
+    4565,
+    4607,
+    4647,
+    4717,
+    4776,
+    4792,
+    4826,
+    4849,
+    4869,
+    4877,
+    4929,
+    4949,
+    5043,
+    5101,
+    5112,
+    5144,
+    5316,
+    5381,
+    5384,
+    5414,
+    5534,
+    5617,
+    5658,
+    5694,
+    5816,
+    5841,
+    5843,
+    5858,
+    5887,
+    6248,
+    6299,
+    6359,
+    6407,
+    6425,
+    6466,
+    6743,
+    6752,
+    6762,
+    6839,
+    6878,
+    6970,
+    6983,
+    6987,
+    7035,
+    7063,
+    7090,
+    7141,
+    7214,
+    7257,
+    7309,
+    7333,
+    7411,
+    7422,
+    7439,
+    7451,
+    7578,
+    7764,
+    7785,
+    7869,
+    7884,
+    7923,
+    7931,
+    7948,
+    7971,
+    8015,
+    8259,
+    8325,
+    8330,
+    8407,
+    8441
+  ],
+  "source_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e160_g120_r1\\subsets\\source_tasks_150_seed42.pkl",
+  "target_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e160_g120_r1\\subsets\\target_tasks_150_seed43.pkl",
+  "source_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e160_g120_r1\\subsets\\source_conditions_150_seed42.csv",
+  "target_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\sample\\tanh_32x16_e160_g120_r1\\subsets\\target_conditions_150_seed43.csv"
+}
+sample transfer test point-level: {'mse': 30197.234375, 'rmse': 173.7735137939453, 'mae': 76.90699005126953, 'r2': 0.9674782945227651, 'num_points': 726}
+sample transfer test task-level: {'mean_mse': 29311.455337677, 'mean_rmse': 127.72877128601074, 'mean_mae': 76.36819400469462, 'mean_r2': 0.9671588797312813, 'median_r2': 0.9886764829848228}
+[2026-05-06 15:43:27] model_6: sample tanh_32x16_e160_g120_r1 point_r2=0.9675 task_mean_r2=0.9672
+[2026-05-06 15:43:27] model_6: sample tuning reached stop threshold with tanh_32x16_e160_g120_r1
+[2026-05-06 15:43:27] model_6: full attempt 1 with tanh_32x16_e160_g120_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_6.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 298607,
+  "source_num_points_mean": 23.201349431818183,
+  "target_num_points_mean": 24.279711174242426,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 8
+trained source tasks 1/8448
+trained source tasks 200/8448
+trained source tasks 400/8448
+trained source tasks 600/8448
+trained source tasks 800/8448
+trained source tasks 1000/8448
+trained source tasks 1200/8448
+trained source tasks 1400/8448
+trained source tasks 1600/8448
+trained source tasks 1800/8448
+trained source tasks 2000/8448
+trained source tasks 2200/8448
+trained source tasks 2400/8448
+trained source tasks 2600/8448
+trained source tasks 2800/8448
+trained source tasks 3000/8448
+trained source tasks 3200/8448
+trained source tasks 3400/8448
+trained source tasks 3600/8448
+trained source tasks 3800/8448
+trained source tasks 4000/8448
+trained source tasks 4200/8448
+trained source tasks 4400/8448
+trained source tasks 4600/8448
+trained source tasks 4800/8448
+trained source tasks 5000/8448
+trained source tasks 5200/8448
+trained source tasks 5400/8448
+trained source tasks 5600/8448
+trained source tasks 5800/8448
+trained source tasks 6000/8448
+trained source tasks 6200/8448
+trained source tasks 6400/8448
+trained source tasks 6600/8448
+trained source tasks 6800/8448
+trained source tasks 7000/8448
+trained source tasks 7200/8448
+trained source tasks 7400/8448
+trained source tasks 7600/8448
+trained source tasks 7800/8448
+trained source tasks 8000/8448
+trained source tasks 8200/8448
+trained source tasks 8400/8448
+trained source tasks 8448/8448
+{
+  "source_task_count": 8448,
+  "parameter_dim": 609,
+  "mean_train_mse": 2446.000211640246,
+  "mean_train_rmse": 35.197992926742174,
+  "mean_train_mae": 17.719969232189186,
+  "mean_train_r2": 0.9979408897347277
+}
+2026-05-06 16:00:43: begin training
+training_seq.shape (8448, 1, 609)
+condition.shape (8448, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=120, expIndex=62601, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\full\\tanh_32x16_e160_g120_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\full\\tanh_32x16_e160_g120_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\full\\tanh_32x16_e160_g120_r1\\target_conditions.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\full\\tanh_32x16_e160_g120_r1\\source_conditions.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\full\\tanh_32x16_e160_g120_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_6\\full\\tanh_32x16_e160_g120_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 8448 samples in 132 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 1.146376132965088
+training complete
+final sampling: generating 8448 samples in 132 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 8
+finetuned target tasks 1/8448
+finetuned target tasks 200/8448
+finetuned target tasks 400/8448
+finetuned target tasks 600/8448
+finetuned target tasks 800/8448
+finetuned target tasks 1000/8448
+finetuned target tasks 1200/8448
+finetuned target tasks 1400/8448
+finetuned target tasks 1600/8448
+finetuned target tasks 1800/8448
+finetuned target tasks 2000/8448
+finetuned target tasks 2200/8448
+finetuned target tasks 2400/8448
+finetuned target tasks 2600/8448
+finetuned target tasks 2800/8448
+finetuned target tasks 3000/8448
+finetuned target tasks 3200/8448
+finetuned target tasks 3400/8448
+finetuned target tasks 3600/8448
+finetuned target tasks 3800/8448
+finetuned target tasks 4000/8448
+finetuned target tasks 4200/8448
+finetuned target tasks 4400/8448
+finetuned target tasks 4600/8448
+finetuned target tasks 4800/8448
+finetuned target tasks 5000/8448
+finetuned target tasks 5200/8448
+finetuned target tasks 5400/8448
+finetuned target tasks 5600/8448
+finetuned target tasks 5800/8448
+finetuned target tasks 6000/8448
+finetuned target tasks 6200/8448
+finetuned target tasks 6400/8448
+finetuned target tasks 6600/8448
+finetuned target tasks 6800/8448
+finetuned target tasks 7000/8448
+finetuned target tasks 7200/8448
+finetuned target tasks 7400/8448
+finetuned target tasks 7600/8448
+finetuned target tasks 7800/8448
+finetuned target tasks 8000/8448
+finetuned target tasks 8200/8448
+finetuned target tasks 8400/8448
+finetuned target tasks 8448/8448
+{
+  "task_count": 8448,
+  "train": {
+    "point_level": {
+      "mse": 16432.83984375,
+      "rmse": 128.19064331054688,
+      "mae": 51.541587829589844,
+      "r2": 0.9847127732784584,
+      "num_points": 123085
+    },
+    "task_level": {
+      "mean_mse": 16738.072106472842,
+      "mean_rmse": 92.32108264503415,
+      "mean_mae": 51.88262884508731,
+      "mean_r2": 0.9847021687105126,
+      "median_r2": 0.9959368229942327
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 20263.015625,
+      "rmse": 142.3482208251953,
+      "mae": 67.11019134521484,
+      "r2": 0.9803982614379616,
+      "num_points": 41015
+    },
+    "task_level": {
+      "mean_mse": 20594.480923043408,
+      "mean_rmse": 110.76852381403671,
+      "mean_mae": 67.88547972475432,
+      "mean_r2": 0.9789803052403244,
+      "median_r2": 0.9923273802440531
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 21484.65234375,
+      "rmse": 146.57643127441406,
+      "mae": 67.04287719726562,
+      "r2": 0.977158945049664,
+      "num_points": 41015
+    },
+    "task_level": {
+      "mean_mse": 21389.61803692647,
+      "mean_rmse": 112.28381444886327,
+      "mean_mae": 67.29124222599873,
+      "mean_r2": 0.9746187667302229,
+      "median_r2": 0.9910762442983787
+    }
+  },
+  "target_task_count": 8448,
+  "parameter_dim": 609
+}
+[2026-05-06 16:13:29] model_6: full tanh_32x16_e160_g120_r1 point_r2=0.9772 task_mean_r2=0.9746
+[2026-05-06 16:13:29] model_6: passed full threshold with tanh_32x16_e160_g120_r1
+[2026-05-06 16:13:29] model_7: starting sample tuning
+[2026-05-06 16:13:29] model_7: sample attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_7.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 309236,
+  "source_num_points_mean": 23.919625946969695,
+  "target_num_points_mean": 25.1328125,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 4
+trained source tasks 1/150
+trained source tasks 150/150
+{
+  "source_task_count": 150,
+  "parameter_dim": 609,
+  "mean_train_mse": 1590.7575465770067,
+  "mean_train_rmse": 32.626476051211355,
+  "mean_train_mae": 15.872690834303697,
+  "mean_train_r2": 0.9985702775547748
+}
+2026-05-06 16:14:10: begin training
+training_seq.shape (150, 1, 609)
+condition.shape (150, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=52701, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\sample\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\sample\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\sample\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\sample\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 150 samples in 3 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 1.0427420139312744
+training complete
+final sampling: generating 150 samples in 3 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 4
+finetuned target tasks 1/150
+finetuned target tasks 150/150
+{
+  "task_count": 150,
+  "train": {
+    "point_level": {
+      "mse": 14069.6552734375,
+      "rmse": 118.6155776977539,
+      "mae": 51.7808952331543,
+      "r2": 0.9860323080618052,
+      "num_points": 2250
+    },
+    "task_level": {
+      "mean_mse": 14635.452091812565,
+      "mean_rmse": 93.85610341628393,
+      "mean_mae": 52.970797149787344,
+      "mean_r2": 0.9861303342903883,
+      "median_r2": 0.994661813304174
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 20976.814453125,
+      "rmse": 144.833740234375,
+      "mae": 69.3156967163086,
+      "r2": 0.9786645095741788,
+      "num_points": 756
+    },
+    "task_level": {
+      "mean_mse": 21690.445386962892,
+      "mean_rmse": 116.08382040659586,
+      "mean_mae": 70.64110142389933,
+      "mean_r2": 0.9779105565980285,
+      "median_r2": 0.9905706940749317
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 23929.021484375,
+      "rmse": 154.69007873535156,
+      "mae": 72.83131408691406,
+      "r2": 0.9743326936918921,
+      "num_points": 756
+    },
+    "task_level": {
+      "mean_mse": 23970.80073261261,
+      "mean_rmse": 122.40150312741598,
+      "mean_mae": 73.74665870030721,
+      "mean_r2": 0.9703113169739851,
+      "median_r2": 0.9882869905459113
+    }
+  },
+  "target_task_count": 150,
+  "parameter_dim": 609
+}
+{
+  "source_limit": 150,
+  "target_limit": 150,
+  "seed": 42,
+  "source_params_shape": [
+    150,
+    609
+  ],
+  "generated_params_shape": [
+    150,
+    1,
+    609
+  ],
+  "target_finetuned_params_shape": [
+    150,
+    609
+  ],
+  "sample_only": true,
+  "source_task_ids": [
+    61,
+    259,
+    292,
+    313,
+    365,
+    492,
+    531,
+    566,
+    638,
+    667,
+    713,
+    740,
+    763,
+    767,
+    782,
+    815,
+    964,
+    1065,
+    1087,
+    1173,
+    1176,
+    1289,
+    1346,
+    1377,
+    1518,
+    1585,
+    1625,
+    1673,
+    1679,
+    1811,
+    1892,
+    1900,
+    1975,
+    2011,
+    2066,
+    2307,
+    2330,
+    2334,
+    2420,
+    2563,
+    2619,
+    2725,
+    2765,
+    2931,
+    2957,
+    3038,
+    3065,
+    3085,
+    3099,
+    3251,
+    3350,
+    3435,
+    3448,
+    3595,
+    3643,
+    3651,
+    3663,
+    3685,
+    3692,
+    3701,
+    3719,
+    3746,
+    3751,
+    3860,
+    3875,
+    3898,
+    3929,
+    3964,
+    3967,
+    3983,
+    4158,
+    4162,
+    4253,
+    4267,
+    4374,
+    4541,
+    4566,
+    4620,
+    4666,
+    4673,
+    4715,
+    4728,
+    4761,
+    4765,
+    4785,
+    4842,
+    5084,
+    5266,
+    5279,
+    5346,
+    5349,
+    5359,
+    5433,
+    5510,
+    5588,
+    5611,
+    5627,
+    5658,
+    5708,
+    5730,
+    5747,
+    5792,
+    5843,
+    5871,
+    5929,
+    5964,
+    6114,
+    6212,
+    6226,
+    6322,
+    6326,
+    6344,
+    6423,
+    6439,
+    6445,
+    6497,
+    6504,
+    6535,
+    6558,
+    6565,
+    6613,
+    6659,
+    6695,
+    6703,
+    6751,
+    6761,
+    6850,
+    6899,
+    6940,
+    6979,
+    6980,
+    6984,
+    6994,
+    7062,
+    7129,
+    7153,
+    7202,
+    7206,
+    7398,
+    7453,
+    7537,
+    7574,
+    7711,
+    7712,
+    7878,
+    8090,
+    8099,
+    8107,
+    8293,
+    8381
+  ],
+  "target_task_ids": [
+    33,
+    34,
+    107,
+    117,
+    166,
+    279,
+    281,
+    363,
+    389,
+    423,
+    621,
+    642,
+    694,
+    695,
+    782,
+    881,
+    990,
+    997,
+    1035,
+    1054,
+    1056,
+    1070,
+    1107,
+    1168,
+    1224,
+    1273,
+    1296,
+    1389,
+    1442,
+    1467,
+    1576,
+    1632,
+    1736,
+    1867,
+    2061,
+    2192,
+    2237,
+    2276,
+    2296,
+    2319,
+    2345,
+    2388,
+    2424,
+    2508,
+    2546,
+    2573,
+    2692,
+    2711,
+    2720,
+    2747,
+    2857,
+    2858,
+    3158,
+    3159,
+    3236,
+    3266,
+    3331,
+    3332,
+    3337,
+    3474,
+    3485,
+    3492,
+    3500,
+    3514,
+    3519,
+    3566,
+    3751,
+    3772,
+    3805,
+    3828,
+    3858,
+    3919,
+    4048,
+    4188,
+    4189,
+    4193,
+    4225,
+    4448,
+    4461,
+    4524,
+    4565,
+    4607,
+    4647,
+    4717,
+    4776,
+    4792,
+    4826,
+    4849,
+    4869,
+    4877,
+    4929,
+    4949,
+    5043,
+    5101,
+    5112,
+    5144,
+    5316,
+    5381,
+    5384,
+    5414,
+    5534,
+    5617,
+    5658,
+    5694,
+    5816,
+    5841,
+    5843,
+    5858,
+    5887,
+    6248,
+    6299,
+    6359,
+    6407,
+    6425,
+    6466,
+    6743,
+    6752,
+    6762,
+    6839,
+    6878,
+    6970,
+    6983,
+    6987,
+    7035,
+    7063,
+    7090,
+    7141,
+    7214,
+    7257,
+    7309,
+    7333,
+    7411,
+    7422,
+    7439,
+    7451,
+    7578,
+    7764,
+    7785,
+    7869,
+    7884,
+    7923,
+    7931,
+    7948,
+    7971,
+    8015,
+    8259,
+    8325,
+    8330,
+    8407,
+    8441
+  ],
+  "source_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_tasks_150_seed42.pkl",
+  "target_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_tasks_150_seed43.pkl",
+  "source_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv",
+  "target_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv"
+}
+sample transfer test point-level: {'mse': 23929.021484375, 'rmse': 154.69007873535156, 'mae': 72.83131408691406, 'r2': 0.9743326936918921, 'num_points': 756}
+sample transfer test task-level: {'mean_mse': 23970.80073261261, 'mean_rmse': 122.40150312741598, 'mean_mae': 73.74665870030721, 'mean_r2': 0.9703113169739851, 'median_r2': 0.9882869905459113}
+[2026-05-06 16:14:39] model_7: sample tanh_32x16_e140_g100_r1 point_r2=0.9743 task_mean_r2=0.9703
+[2026-05-06 16:14:39] model_7: sample tuning reached stop threshold with tanh_32x16_e140_g100_r1
+[2026-05-06 16:14:39] model_7: full attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_7.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 309236,
+  "source_num_points_mean": 23.919625946969695,
+  "target_num_points_mean": 25.1328125,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 8
+trained source tasks 1/8448
+trained source tasks 200/8448
+trained source tasks 400/8448
+trained source tasks 600/8448
+trained source tasks 800/8448
+trained source tasks 1000/8448
+trained source tasks 1200/8448
+trained source tasks 1400/8448
+trained source tasks 1600/8448
+trained source tasks 1800/8448
+trained source tasks 2000/8448
+trained source tasks 2200/8448
+trained source tasks 2400/8448
+trained source tasks 2600/8448
+trained source tasks 2800/8448
+trained source tasks 3000/8448
+trained source tasks 3200/8448
+trained source tasks 3400/8448
+trained source tasks 3600/8448
+trained source tasks 3800/8448
+trained source tasks 4000/8448
+trained source tasks 4200/8448
+trained source tasks 4400/8448
+trained source tasks 4600/8448
+trained source tasks 4800/8448
+trained source tasks 5000/8448
+trained source tasks 5200/8448
+trained source tasks 5400/8448
+trained source tasks 5600/8448
+trained source tasks 5800/8448
+trained source tasks 6000/8448
+trained source tasks 6200/8448
+trained source tasks 6400/8448
+trained source tasks 6600/8448
+trained source tasks 6800/8448
+trained source tasks 7000/8448
+trained source tasks 7200/8448
+trained source tasks 7400/8448
+trained source tasks 7600/8448
+trained source tasks 7800/8448
+trained source tasks 8000/8448
+trained source tasks 8200/8448
+trained source tasks 8400/8448
+trained source tasks 8448/8448
+{
+  "source_task_count": 8448,
+  "parameter_dim": 609,
+  "mean_train_mse": 1592.263090815945,
+  "mean_train_rmse": 32.25510441401275,
+  "mean_train_mae": 15.606388051863618,
+  "mean_train_r2": 0.9985790390856899
+}
+2026-05-06 16:30:49: begin training
+training_seq.shape (8448, 1, 609)
+condition.shape (8448, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=62701, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\full\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\full\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\full\\tanh_32x16_e140_g100_r1\\target_conditions.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\full\\tanh_32x16_e140_g100_r1\\source_conditions.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\full\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_7\\full\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 8448 samples in 132 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 1.2703425884246826
+training complete
+final sampling: generating 8448 samples in 132 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 8
+finetuned target tasks 1/8448
+finetuned target tasks 200/8448
+finetuned target tasks 400/8448
+finetuned target tasks 600/8448
+finetuned target tasks 800/8448
+finetuned target tasks 1000/8448
+finetuned target tasks 1200/8448
+finetuned target tasks 1400/8448
+finetuned target tasks 1600/8448
+finetuned target tasks 1800/8448
+finetuned target tasks 2000/8448
+finetuned target tasks 2200/8448
+finetuned target tasks 2400/8448
+finetuned target tasks 2600/8448
+finetuned target tasks 2800/8448
+finetuned target tasks 3000/8448
+finetuned target tasks 3200/8448
+finetuned target tasks 3400/8448
+finetuned target tasks 3600/8448
+finetuned target tasks 3800/8448
+finetuned target tasks 4000/8448
+finetuned target tasks 4200/8448
+finetuned target tasks 4400/8448
+finetuned target tasks 4600/8448
+finetuned target tasks 4800/8448
+finetuned target tasks 5000/8448
+finetuned target tasks 5200/8448
+finetuned target tasks 5400/8448
+finetuned target tasks 5600/8448
+finetuned target tasks 5800/8448
+finetuned target tasks 6000/8448
+finetuned target tasks 6200/8448
+finetuned target tasks 6400/8448
+finetuned target tasks 6600/8448
+finetuned target tasks 6800/8448
+finetuned target tasks 7000/8448
+finetuned target tasks 7200/8448
+finetuned target tasks 7400/8448
+finetuned target tasks 7600/8448
+finetuned target tasks 7800/8448
+finetuned target tasks 8000/8448
+finetuned target tasks 8200/8448
+finetuned target tasks 8400/8448
+finetuned target tasks 8448/8448
+{
+  "task_count": 8448,
+  "train": {
+    "point_level": {
+      "mse": 13987.8740234375,
+      "rmse": 118.27033996582031,
+      "mae": 50.272037506103516,
+      "r2": 0.9860457537449009,
+      "num_points": 127042
+    },
+    "task_level": {
+      "mean_mse": 14543.768002322427,
+      "mean_rmse": 91.4327136666047,
+      "mean_mae": 51.079510032620114,
+      "mean_r2": 0.9863826138334206,
+      "median_r2": 0.9946578075901781
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 20086.875,
+      "rmse": 141.72817993164062,
+      "mae": 68.28983306884766,
+      "r2": 0.9797901788317926,
+      "num_points": 42640
+    },
+    "task_level": {
+      "mean_mse": 20799.592237056768,
+      "mean_rmse": 114.87776260123108,
+      "mean_mae": 69.45639460093595,
+      "mean_r2": 0.9780966137452106,
+      "median_r2": 0.990529862521923
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 21710.60546875,
+      "rmse": 147.34518432617188,
+      "mae": 69.35636901855469,
+      "r2": 0.9767116907622068,
+      "num_points": 42640
+    },
+    "task_level": {
+      "mean_mse": 21995.84323050601,
+      "mean_rmse": 118.71783919796121,
+      "mean_mae": 70.05791503425236,
+      "mean_r2": 0.9738800350186779,
+      "median_r2": 0.989294801464697
+    }
+  },
+  "target_task_count": 8448,
+  "parameter_dim": 609
+}
+[2026-05-06 16:43:38] model_7: full tanh_32x16_e140_g100_r1 point_r2=0.9767 task_mean_r2=0.9739
+[2026-05-06 16:43:38] model_7: passed full threshold with tanh_32x16_e140_g100_r1
+[2026-05-06 16:43:38] model_8: starting sample tuning
+[2026-05-06 16:43:38] model_8: sample attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_8.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 399537,
+  "source_num_points_mean": 31.36434659090909,
+  "target_num_points_mean": 32.203243371212125,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 4
+trained source tasks 1/150
+trained source tasks 150/150
+{
+  "source_task_count": 150,
+  "parameter_dim": 609,
+  "mean_train_mse": 1694.400949605306,
+  "mean_train_rmse": 38.06039711634318,
+  "mean_train_mae": 18.989610293706257,
+  "mean_train_r2": 0.9974005953366191
+}
+2026-05-06 16:44:22: begin training
+training_seq.shape (150, 1, 609)
+condition.shape (150, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=52801, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\sample\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\sample\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\sample\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\sample\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 150 samples in 3 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 0.9652096629142761
+training complete
+final sampling: generating 150 samples in 3 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 4
+finetuned target tasks 1/150
+finetuned target tasks 150/150
+{
+  "task_count": 150,
+  "train": {
+    "point_level": {
+      "mse": 4125.49609375,
+      "rmse": 64.23002624511719,
+      "mae": 30.928499221801758,
+      "r2": 0.9931464526489778,
+      "num_points": 2899
+    },
+    "task_level": {
+      "mean_mse": 4232.921421000163,
+      "mean_rmse": 56.26733497619629,
+      "mean_mae": 31.331101503372192,
+      "mean_r2": 0.9930760219954986,
+      "median_r2": 0.9957902109103838
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 5883.75537109375,
+      "rmse": 76.70564270019531,
+      "mae": 37.795387268066406,
+      "r2": 0.9904857688804131,
+      "num_points": 964
+    },
+    "task_level": {
+      "mean_mse": 6052.497289937337,
+      "mean_rmse": 66.13237836201985,
+      "mean_mae": 38.299359248479206,
+      "mean_r2": 0.9898823272437384,
+      "median_r2": 0.9944482229997049
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 6798.18359375,
+      "rmse": 82.45109558105469,
+      "mae": 40.43137741088867,
+      "r2": 0.9881915985604692,
+      "num_points": 964
+    },
+    "task_level": {
+      "mean_mse": 7091.899149119059,
+      "mean_rmse": 69.82792925198873,
+      "mean_mae": 41.171969153086344,
+      "mean_r2": 0.9879455983163321,
+      "median_r2": 0.9947928822945076
+    }
+  },
+  "target_task_count": 150,
+  "parameter_dim": 609
+}
+{
+  "source_limit": 150,
+  "target_limit": 150,
+  "seed": 42,
+  "source_params_shape": [
+    150,
+    609
+  ],
+  "generated_params_shape": [
+    150,
+    1,
+    609
+  ],
+  "target_finetuned_params_shape": [
+    150,
+    609
+  ],
+  "sample_only": true,
+  "source_task_ids": [
+    61,
+    259,
+    292,
+    313,
+    365,
+    492,
+    531,
+    566,
+    638,
+    667,
+    713,
+    740,
+    763,
+    767,
+    782,
+    815,
+    964,
+    1065,
+    1087,
+    1173,
+    1176,
+    1289,
+    1346,
+    1377,
+    1518,
+    1585,
+    1625,
+    1673,
+    1679,
+    1811,
+    1892,
+    1900,
+    1975,
+    2011,
+    2066,
+    2307,
+    2330,
+    2334,
+    2420,
+    2563,
+    2619,
+    2725,
+    2765,
+    2931,
+    2957,
+    3038,
+    3065,
+    3085,
+    3099,
+    3251,
+    3350,
+    3435,
+    3448,
+    3595,
+    3643,
+    3651,
+    3663,
+    3685,
+    3692,
+    3701,
+    3719,
+    3746,
+    3751,
+    3860,
+    3875,
+    3898,
+    3929,
+    3964,
+    3967,
+    3983,
+    4158,
+    4162,
+    4253,
+    4267,
+    4374,
+    4541,
+    4566,
+    4620,
+    4666,
+    4673,
+    4715,
+    4728,
+    4761,
+    4765,
+    4785,
+    4842,
+    5084,
+    5266,
+    5279,
+    5346,
+    5349,
+    5359,
+    5433,
+    5510,
+    5588,
+    5611,
+    5627,
+    5658,
+    5708,
+    5730,
+    5747,
+    5792,
+    5843,
+    5871,
+    5929,
+    5964,
+    6114,
+    6212,
+    6226,
+    6322,
+    6326,
+    6344,
+    6423,
+    6439,
+    6445,
+    6497,
+    6504,
+    6535,
+    6558,
+    6565,
+    6613,
+    6659,
+    6695,
+    6703,
+    6751,
+    6761,
+    6850,
+    6899,
+    6940,
+    6979,
+    6980,
+    6984,
+    6994,
+    7062,
+    7129,
+    7153,
+    7202,
+    7206,
+    7398,
+    7453,
+    7537,
+    7574,
+    7711,
+    7712,
+    7878,
+    8090,
+    8099,
+    8107,
+    8293,
+    8381
+  ],
+  "target_task_ids": [
+    33,
+    34,
+    107,
+    117,
+    166,
+    279,
+    281,
+    363,
+    389,
+    423,
+    621,
+    642,
+    694,
+    695,
+    782,
+    881,
+    990,
+    997,
+    1035,
+    1054,
+    1056,
+    1070,
+    1107,
+    1168,
+    1224,
+    1273,
+    1296,
+    1389,
+    1442,
+    1467,
+    1576,
+    1632,
+    1736,
+    1867,
+    2061,
+    2192,
+    2237,
+    2276,
+    2296,
+    2319,
+    2345,
+    2388,
+    2424,
+    2508,
+    2546,
+    2573,
+    2692,
+    2711,
+    2720,
+    2747,
+    2857,
+    2858,
+    3158,
+    3159,
+    3236,
+    3266,
+    3331,
+    3332,
+    3337,
+    3474,
+    3485,
+    3492,
+    3500,
+    3514,
+    3519,
+    3566,
+    3751,
+    3772,
+    3805,
+    3828,
+    3858,
+    3919,
+    4048,
+    4188,
+    4189,
+    4193,
+    4225,
+    4448,
+    4461,
+    4524,
+    4565,
+    4607,
+    4647,
+    4717,
+    4776,
+    4792,
+    4826,
+    4849,
+    4869,
+    4877,
+    4929,
+    4949,
+    5043,
+    5101,
+    5112,
+    5144,
+    5316,
+    5381,
+    5384,
+    5414,
+    5534,
+    5617,
+    5658,
+    5694,
+    5816,
+    5841,
+    5843,
+    5858,
+    5887,
+    6248,
+    6299,
+    6359,
+    6407,
+    6425,
+    6466,
+    6743,
+    6752,
+    6762,
+    6839,
+    6878,
+    6970,
+    6983,
+    6987,
+    7035,
+    7063,
+    7090,
+    7141,
+    7214,
+    7257,
+    7309,
+    7333,
+    7411,
+    7422,
+    7439,
+    7451,
+    7578,
+    7764,
+    7785,
+    7869,
+    7884,
+    7923,
+    7931,
+    7948,
+    7971,
+    8015,
+    8259,
+    8325,
+    8330,
+    8407,
+    8441
+  ],
+  "source_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_tasks_150_seed42.pkl",
+  "target_bundle_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_tasks_150_seed43.pkl",
+  "source_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\sample\\tanh_32x16_e140_g100_r1\\subsets\\source_conditions_150_seed42.csv",
+  "target_condition_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\sample\\tanh_32x16_e140_g100_r1\\subsets\\target_conditions_150_seed43.csv"
+}
+sample transfer test point-level: {'mse': 6798.18359375, 'rmse': 82.45109558105469, 'mae': 40.43137741088867, 'r2': 0.9881915985604692, 'num_points': 964}
+sample transfer test task-level: {'mean_mse': 7091.899149119059, 'mean_rmse': 69.82792925198873, 'mean_mae': 41.171969153086344, 'mean_r2': 0.9879455983163321, 'median_r2': 0.9947928822945076}
+[2026-05-06 16:44:51] model_8: sample tanh_32x16_e140_g100_r1 point_r2=0.9882 task_mean_r2=0.9879
+[2026-05-06 16:44:51] model_8: sample tuning reached stop threshold with tanh_32x16_e140_g100_r1
+[2026-05-06 16:44:51] model_8: full attempt 1 with tanh_32x16_e140_g100_r1
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_8.csv",
+  "source_retentions": [
+    1,
+    2,
+    3
+  ],
+  "target_retentions": [
+    4,
+    5,
+    6
+  ],
+  "min_task_points": 12,
+  "source_task_count": 8448,
+  "target_task_count": 8448,
+  "duplicate_condition_step_rows_averaged": 399537,
+  "source_num_points_mean": 31.36434659090909,
+  "target_num_points_mean": 32.203243371212125,
+  "step_scaler_scope": "source_only",
+  "condition_scaler_scope": "all_tasks"
+}
+source domain training device: cpu
+source domain parallel workers: 8
+trained source tasks 1/8448
+trained source tasks 200/8448
+trained source tasks 400/8448
+trained source tasks 600/8448
+trained source tasks 800/8448
+trained source tasks 1000/8448
+trained source tasks 1200/8448
+trained source tasks 1400/8448
+trained source tasks 1600/8448
+trained source tasks 1800/8448
+trained source tasks 2000/8448
+trained source tasks 2200/8448
+trained source tasks 2400/8448
+trained source tasks 2600/8448
+trained source tasks 2800/8448
+trained source tasks 3000/8448
+trained source tasks 3200/8448
+trained source tasks 3400/8448
+trained source tasks 3600/8448
+trained source tasks 3800/8448
+trained source tasks 4000/8448
+trained source tasks 4200/8448
+trained source tasks 4400/8448
+trained source tasks 4600/8448
+trained source tasks 4800/8448
+trained source tasks 5000/8448
+trained source tasks 5200/8448
+trained source tasks 5400/8448
+trained source tasks 5600/8448
+trained source tasks 5800/8448
+trained source tasks 6000/8448
+trained source tasks 6200/8448
+trained source tasks 6400/8448
+trained source tasks 6600/8448
+trained source tasks 6800/8448
+trained source tasks 7000/8448
+trained source tasks 7200/8448
+trained source tasks 7400/8448
+trained source tasks 7600/8448
+trained source tasks 7800/8448
+trained source tasks 8000/8448
+trained source tasks 8200/8448
+trained source tasks 8400/8448
+trained source tasks 8448/8448
+{
+  "source_task_count": 8448,
+  "parameter_dim": 609,
+  "mean_train_mse": 1844.8991478600567,
+  "mean_train_rmse": 40.09126262045042,
+  "mean_train_mae": 20.03573857405872,
+  "mean_train_r2": 0.9971782260869027
+}
+2026-05-06 17:04:52: begin training
+training_seq.shape (8448, 1, 609)
+condition.shape (8448, 3)
+Namespace(denoise='Trans3', diffusionstep=10, epochs=100, expIndex=62801, modeldim=16, pec_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\full\\tanh_32x16_e140_g100_r1\\pec_scaler.pkl', repeat_num=1, retention_scaler_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\full\\tanh_32x16_e140_g100_r1\\retention_scaler.pkl', sample_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\full\\tanh_32x16_e140_g100_r1\\target_conditions.csv', sample_target_param_path='', samplebatchsize=64, train_condition_csv='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\full\\tanh_32x16_e140_g100_r1\\source_conditions.csv', train_param_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\full\\tanh_32x16_e140_g100_r1\\source_params.npy', trainbatchsize=1, wl_vocab_path='C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_8\\full\\tanh_32x16_e140_g100_r1\\wl_vocab.json')
+
+eval:
+eval sampling: generating 8448 samples in 132 chunks (chunk size 64)
+best result! in epoch 50
+metric sum: 1.206986904144287
+training complete
+final sampling: generating 8448 samples in 132 chunks (chunk size 64)
+target domain finetuning device: cpu
+target domain parallel workers: 8
+finetuned target tasks 1/8448
+finetuned target tasks 200/8448
+finetuned target tasks 400/8448
+finetuned target tasks 600/8448
+finetuned target tasks 800/8448
+finetuned target tasks 1000/8448
+finetuned target tasks 1200/8448
+finetuned target tasks 1400/8448
+finetuned target tasks 1600/8448
+finetuned target tasks 1800/8448
+finetuned target tasks 2000/8448
+finetuned target tasks 2200/8448
+finetuned target tasks 2400/8448
+finetuned target tasks 2600/8448
+finetuned target tasks 2800/8448
+finetuned target tasks 3000/8448
+finetuned target tasks 3200/8448
+finetuned target tasks 3400/8448
+finetuned target tasks 3600/8448
+finetuned target tasks 3800/8448
+finetuned target tasks 4000/8448
+finetuned target tasks 4200/8448
+finetuned target tasks 4400/8448
+finetuned target tasks 4600/8448
+finetuned target tasks 4800/8448
+finetuned target tasks 5000/8448
+finetuned target tasks 5200/8448
+finetuned target tasks 5400/8448
+finetuned target tasks 5600/8448
+finetuned target tasks 5800/8448
+finetuned target tasks 6000/8448
+finetuned target tasks 6200/8448
+finetuned target tasks 6400/8448
+finetuned target tasks 6600/8448
+finetuned target tasks 6800/8448
+finetuned target tasks 7000/8448
+finetuned target tasks 7200/8448
+finetuned target tasks 7400/8448
+finetuned target tasks 7600/8448
+finetuned target tasks 7800/8448
+finetuned target tasks 8000/8448
+finetuned target tasks 8200/8448
+finetuned target tasks 8400/8448
+finetuned target tasks 8448/8448
+{
+  "task_count": 8448,
+  "train": {
+    "point_level": {
+      "mse": 4806.966796875,
+      "rmse": 69.33229064941406,
+      "mae": 32.01334762573242,
+      "r2": 0.9920006035457358,
+      "num_points": 163265
+    },
+    "task_level": {
+      "mean_mse": 4921.173850969764,
+      "mean_rmse": 58.384299960749395,
+      "mean_mae": 32.4136857741978,
+      "mean_r2": 0.9918817113553863,
+      "median_r2": 0.9959372424384142
+    }
+  },
+  "val": {
+    "point_level": {
+      "mse": 6627.04833984375,
+      "rmse": 81.40668487548828,
+      "mae": 40.01325607299805,
+      "r2": 0.9891260346155992,
+      "num_points": 54394
+    },
+    "task_level": {
+      "mean_mse": 6789.587248369346,
+      "mean_rmse": 68.31743195867448,
+      "mean_mae": 40.51338324182187,
+      "mean_r2": 0.9888770177234777,
+      "median_r2": 0.9942132572752638
+    }
+  },
+  "test": {
+    "point_level": {
+      "mse": 7156.4658203125,
+      "rmse": 84.59589385986328,
+      "mae": 40.912200927734375,
+      "r2": 0.9877227954879082,
+      "num_points": 54394
+    },
+    "task_level": {
+      "mean_mse": 7378.701305277871,
+      "mean_rmse": 70.9983233497337,
+      "mean_mae": 41.562444933012806,
+      "mean_r2": 0.9875371773856717,
+      "median_r2": 0.9937353798734261
+    }
+  },
+  "target_task_count": 8448,
+  "parameter_dim": 609
+}
+[2026-05-06 17:19:50] model_8: full tanh_32x16_e140_g100_r1 point_r2=0.9877 task_mean_r2=0.9875
+[2026-05-06 17:19:50] model_8: passed full threshold with tanh_32x16_e140_g100_r1
+[2026-05-06 17:19:50] batch run complete

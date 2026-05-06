@@ -1,0 +1,126 @@
+{
+  "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_5.csv",
+  "domain_summary": {
+    "csv_path": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Data\\split_by_model\\model_5.csv",
+    "source_retentions": [
+      1,
+      2,
+      3
+    ],
+    "target_retentions": [
+      4,
+      5,
+      6
+    ],
+    "min_task_points": 12,
+    "source_task_count": 8448,
+    "target_task_count": 8448,
+    "duplicate_condition_step_rows_averaged": 299799,
+    "source_num_points_mean": 23.380326704545453,
+    "target_num_points_mean": 24.310132575757574,
+    "step_scaler_scope": "source_only",
+    "condition_scaler_scope": "all_tasks"
+  },
+  "source_pretrain_summary": {
+    "source_task_count": 150,
+    "parameter_dim": 609,
+    "mean_train_mse": 2351.952830950419,
+    "mean_train_rmse": 42.6500163380305,
+    "mean_train_mae": 20.74963973283768,
+    "mean_train_r2": 0.9981264786261661
+  },
+  "target_transfer_report": {
+    "task_count": 150,
+    "train": {
+      "point_level": {
+        "mse": 24456.3046875,
+        "rmse": 156.38511657714844,
+        "mae": 58.81830978393555,
+        "r2": 0.9785455119433837,
+        "num_points": 2202
+      },
+      "task_level": {
+        "mean_mse": 23942.317979065516,
+        "mean_rmse": 106.24323934435844,
+        "mean_mae": 58.411225192546844,
+        "mean_r2": 0.9780440765161008,
+        "median_r2": 0.9953164029330567
+      }
+    },
+    "val": {
+      "point_level": {
+        "mse": 29565.611328125,
+        "rmse": 171.946533203125,
+        "mae": 76.34850311279297,
+        "r2": 0.9739692620613392,
+        "num_points": 730
+      },
+      "task_level": {
+        "mean_mse": 30643.44278421402,
+        "mean_rmse": 131.53256172815958,
+        "mean_mae": 78.3120521291097,
+        "mean_r2": 0.9716675129080299,
+        "median_r2": 0.9894739043535359
+      }
+    },
+    "test": {
+      "point_level": {
+        "mse": 39111.0859375,
+        "rmse": 197.76522827148438,
+        "mae": 82.83343505859375,
+        "r2": 0.9643150437624236,
+        "num_points": 730
+      },
+      "task_level": {
+        "mean_mse": 39266.01205525716,
+        "mean_rmse": 145.80974223454794,
+        "mean_mae": 83.76970302581788,
+        "mean_r2": 0.9590037055894634,
+        "median_r2": 0.986900366001792
+      }
+    },
+    "target_task_count": 150,
+    "parameter_dim": 609
+  },
+  "one_group_one_network_check": {
+    "group_key": [
+      "WL",
+      "Retention",
+      "PEC"
+    ],
+    "source_task_count": 150,
+    "target_task_count": 150,
+    "source_parameter_rows": 150,
+    "generated_parameter_rows": 150,
+    "target_finetuned_parameter_rows": 150,
+    "parameter_dim": {
+      "source": 609,
+      "generated": 609,
+      "target_finetuned": 609
+    },
+    "verified": true
+  },
+  "artifacts": {
+    "source_params": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\source_params.npy",
+    "diffusion_samples": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\GPD\\Output\\sampleSeq_RealParams_52501.npy",
+    "target_finetuned_params": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\target_finetuned_params.npy",
+    "target_metrics_csv": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\target_task_metrics.csv",
+    "target_report_json": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\target_transfer_report.json",
+    "diffusion_samples_snapshot": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1\\sampleSeq_RealParams_52501.npy"
+  },
+  "meta": {
+    "model_index": 5,
+    "run_kind": "sample",
+    "stage_name": "sample",
+    "candidate_name": "tanh_32x16_e140_g100_r1",
+    "artifacts_dir": "C:\\Users\\lzz\\Desktop\\GPD-master\\GPD-master\\Pretrain\\artifacts\\curve_transfer_batch\\model_5\\sample\\tanh_32x16_e140_g100_r1",
+    "effective_source_task_count": 150,
+    "effective_target_task_count": 150,
+    "frac_test_r2_gt_0_9": 0.94,
+    "frac_test_r2_lt_0": 0.0,
+    "min_test_r2": 0.0819921588565362,
+    "p05_test_r2": 0.8858357747545004,
+    "point_test_r2": 0.9643150437624236,
+    "task_mean_test_r2": 0.9590037055894634
+  }
+}
