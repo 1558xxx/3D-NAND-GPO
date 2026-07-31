@@ -1,0 +1,48 @@
+{
+  "model_id": 2,
+  "bake_value": 0,
+  "source_rows": 166896,
+  "target_train_rows": 173066,
+  "test_rows": 400,
+  "test_groups": 20,
+  "metrics_full_test": {
+    "MSE": 34205.97986385655,
+    "RMSE": 184.9485870826175,
+    "MAE": 134.2918193232684,
+    "R2": 0.9689899277473631
+  },
+  "metrics_explained_subset": {
+    "MSE": 34205.9798638564,
+    "RMSE": 184.9485870826171,
+    "MAE": 134.29181932326804,
+    "R2": 0.9689899277473633
+  },
+  "ensemble_weights": [
+    0.2739128546890724,
+    0.24662091428351224,
+    0.21713036537358907,
+    0.2623358656538262
+  ],
+  "feature_order_by_importance": [
+    "Step",
+    "PEC",
+    "Wordline",
+    "Retention"
+  ],
+  "low_waterfall_index": 38,
+  "high_waterfall_index": 389,
+  "low_waterfall_prediction": 25.709412473281873,
+  "high_waterfall_prediction": 3000.5888885628483,
+  "low_waterfall_condition": {
+    "Step": 20,
+    "PEC": 8000,
+    "Retention": 5,
+    "Wordline": 115
+  },
+  "high_waterfall_condition": {
+    "Step": 10,
+    "PEC": 5000,
+    "Retention": 5,
+    "Wordline": 115
+  }
+}

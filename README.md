@@ -1,45 +1,57 @@
-# 3D NAND
+# Device-Condition-Informed Diffusion Parameter Transfer for 3-D NAND
 
-这是从原项目中单独整理出来的“本次实际使用文件”目录。
+This repository contains the code and processed numerical data associated with the manuscript **“Device-Condition-Informed Diffusion Parameter Transfer for Sparse Reconstruction of 3-D NAND Threshold-Voltage Distributions.”** The study investigates sparse reconstruction of threshold-voltage distributions for the seven programmed TLC states (P1–P7) using a device-condition-informed diffusion parameter prior and target-device adaptation.
 
-整理原则：
+## Repository contents
 
-- 只复制本次 3D NAND 迁移学习实验真正用到的文件
-- 保留 `Data / Pretrain / GPD` 的相对结构，方便复现
-- 不移动原项目文件，原目录保持不变
-- 不包含这次没有实际用到的脚本、配置和杂项文件
+- `Data/split_by_model/`: processed device-condition data organized by device/model identifier.
+- `GPD/`: conditional diffusion parameter-generation implementation and supporting model components.
+- `Pretrain/`: source-model training, target adaptation, and sparsity/initialization benchmarks.
+- `analysis/`: fixed-budget evaluation, comparison baselines, ablation studies, and figure-data processing scripts used for the manuscript.
+- `paper_data/`: processed numerical data directly supporting the reported tables and figures.
 
-## 目录说明
+The repository intentionally excludes the manuscript source, submission forms, local execution logs, temporary files, and unrelated project material.
 
-- `Data/split_by_model/`
-  - 本次实际跑到的 `model_2.csv` 到 `model_8.csv`
+## Manuscript result mapping
 
-- `Pretrain/`
-  - 本次预训练、目标域微调、批量跑模和汇总用到的配置与代码
-  - `Models/` 中只保留了本次实际使用的 `MLPRegressor`
-  - `artifacts/curve_transfer_batch/` 中保存了全部 sample/full 评估结果与 Excel 汇总
+| Manuscript item | Supporting files |
+| --- | --- |
+| Per-state reconstruction and comparison results | `paper_data/task2_scale_summary.csv`, `paper_data/task2_full_family_baselines.csv` |
+| Fixed-budget 7/9-point protocol | `paper_data/task2_fixed_anchor_protocol_representative_with_conditional.csv`, `paper_data/task2_fixed_anchor_protocol_representative_task_metrics.csv` |
+| Hierarchical transfer ablation | `paper_data/task2_hierarchy_unfactorized_ablation_representative_summary.csv`, `paper_data/task2_full_family_baseline_task_metrics.csv` |
+| Predictor attribution | `paper_data/task1_shap_feature_importance.csv`, `paper_data/task1_shap_explained_samples.csv`, `paper_data/task1_shap_run_metadata.json` |
+| PEC-dependent reconstruction case study | `paper_data/task2_physical_consistency_curves.csv`, `paper_data/task2_physical_consistency_ladder.csv` |
+| Extreme-sparsity analysis | `paper_data/task2_extreme_sparsity_model3.csv` |
+| Residual analysis | `paper_data/task2_residual_heatmap.csv` |
 
-- `GPD/`
-  - 本次扩散模型用到的主入口、数据准备、日志工具
-  - `TimeTransformer/` 和 `denoising_diffusion_pytorch/` 保留为可运行的最小依赖包
-  - `Logs/`, `Output/`, `ModelSave/`, `TensorBoardLogs/` 目录已预留，便于后续重跑
+## Environment
 
-## 关键结果
+Python 3.9 or a compatible environment is recommended. Install the main dependencies with:
 
-- Excel 汇总：
-  - `Pretrain/artifacts/curve_transfer_batch/curve_transfer_batch_results.xls`
+```bash
+pip install -r requirements.txt
+```
 
-- 最终总表：
-  - `Pretrain/artifacts/curve_transfer_batch/final_summary.csv`
+PyTorch should be installed with the CPU or CUDA build appropriate for the local system. The versions in `requirements.txt` reflect the main development environment.
 
-- 批处理状态：
-  - `Pretrain/artifacts/curve_transfer_batch/batch_state.json`
+## Main workflows
 
-## 说明
+1. Prepare or inspect the processed device data under `Data/split_by_model/`.
+2. Train or evaluate the diffusion parameter generator using the scripts in `GPD/`.
+3. Run source training and target adaptation through `Pretrain/curve_task_workflow.py` and the task-specific entry points in `Pretrain/`.
+4. Reproduce fixed-budget comparisons and ablations with the scripts in `analysis/`.
+5. Use the processed outputs in `paper_data/` to verify the numerical values reported in the manuscript.
 
-- 这份目录是“整理副本”，不是替换原仓库
-- 如果后面你还想继续精简，我建议优先保留：
-  - `Data/split_by_model`
-  - `Pretrain`
-  - `GPD`
-  - `Pretrain/artifacts/curve_transfer_batch`
+`analysis/make_task2_depth_figures.py` reads the processed inputs from `paper_data/` and writes regenerated graphics to `generated_figures/`.
+
+The exact experiment commands depend on the local data and checkpoint locations. Each entry-point script exposes its configurable paths and experiment settings through command-line arguments or constants near the top of the file.
+
+## Interpretation notes
+
+- SHAP values in this study quantify predictor attribution and are not interpreted as causal physical mechanisms.
+- The fixed-budget evaluation uses controlled representative subsets with peak-informed anchor selection, as described in the manuscript.
+- Performance claims are limited to the reported datasets, device conditions, and evaluation protocols.
+
+## Authors
+
+Chunru Xiong, Zongzheng Li, Qiang Li, and Haihua Hu.

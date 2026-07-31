@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this code or processed data, please cite the associated manuscript."
+title: "Code and processed data for Device-Condition-Informed Diffusion Parameter Transfer for Sparse Reconstruction of 3-D NAND Threshold-Voltage Distributions"
+type: software
+authors:
+  - family-names: Xiong
+    given-names: Chunru
+  - family-names: Li
+    given-names: Zongzheng
+  - family-names: Li
+    given-names: Qiang
+  - family-names: Hu
+    given-names: Haihua
+repository-code: "https://github.com/1558xxx/3D-NAND-GPO"
+date-released: 2026-07-31

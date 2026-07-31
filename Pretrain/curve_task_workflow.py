@@ -535,9 +535,19 @@ def _fit_target_task_with_selection(
     generated_init_vector,
 ):
     scratch_retries = int(train_config.get("target_scratch_retries", 0))
-    candidate_specs = [("generated", generated_init_vector, 0)]
-    for retry_index in range(scratch_retries):
-        candidate_specs.append(("scratch", None, retry_index + 1))
+    init_strategy = str(train_config.get("target_init_strategy", "validation_selected")).strip().lower()
+
+    if init_strategy == "validation_selected":
+        candidate_specs = [("generated", generated_init_vector, 0)]
+        for retry_index in range(scratch_retries):
+            candidate_specs.append(("scratch", None, retry_index + 1))
+    elif init_strategy == "generated_only":
+        candidate_specs = [("generated", generated_init_vector, 0)]
+    elif init_strategy == "scratch_only":
+        retry_total = max(1, scratch_retries)
+        candidate_specs = [("scratch", None, retry_index + 1) for retry_index in range(retry_total)]
+    else:
+        raise ValueError("Unsupported target_init_strategy: {}".format(init_strategy))
 
     best_vector = None
     best_metrics = None

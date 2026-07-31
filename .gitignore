@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
+
+# Local training outputs and temporary files
+Logs/
+TensorBoardLogs/
+ModelSave/
+Output/
+generated_figures/
+tmp/
+temp/
