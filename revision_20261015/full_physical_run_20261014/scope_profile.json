@@ -1,0 +1,14 @@
+{
+  "profile": "retained_reviews_20261014",
+  "authorization": "User explicitly cancelled experiments corresponding to deleted reviewer requests and retained full-cohort required experiments; no small-cohort replacement.",
+  "deleted_requests": ["R1 major comment 5", "R3 comments 3, 4, 5", "R3 comment 7 final sentence", "R3 comment 2 timestep ablation phrase"],
+  "required": ["28 cohorts x 3 seeds full main experiment", "28 cohorts full classical baselines", "28 cohorts x 3 seeds full-target lambda 0/1e-6/1e-4/1e-2 at nested B7", "full-cohort coverage audit", "seed statistics, paired curve/WL/PEC-block intervals", "robust metrics, peak/tail-slope quantiles, failure taxonomy and representative curves", "original-generator specification, generation latency and operation-count estimate", "reproducibility inventory and honest limitations", "final manuscript and Chinese response verification"],
+  "cancelled": ["T50 and terminal-noise variants", "source-size and matched-update sweeps", "condition removal, shuffling and unconditional retraining", "CVAE, flow, ensemble, dropout, conditional-mean generator extensions", "Adam optimizer cross-checks for deleted R1-5", "full direct-function and tree-model expansion", "full TrAdaBoost SHAP expansion", "uniform 3/5/7/9/11/13 sweep", "full exterior-zero extension", "rigorous parameter-vs-function bias-variance expansion"],
+  "all_target_main_scope": true,
+  "all_target_lambda_scope": true,
+  "all_original_ablations_required": false,
+  "lambda_selection": "Descriptive fixed grid, main lambda remains zero; no target-test selection of a new default.",
+  "preserve_completed_and_partial_outputs": true,
+  "cancelled_tasks_are_not_completed": true,
+  "delivery_still_requires_document_review": true
+}

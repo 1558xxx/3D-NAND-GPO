@@ -1,0 +1,21 @@
+# Generated experiment state and local inputs
+.venv/
+.venv_gpu/
+**/__pycache__/
+**/*.pyc
+full_physical_run_20261014/raw/
+full_physical_run_20261014/data/
+full_physical_run_20261014/results/
+full_physical_run_20261014/analysis_retained/
+full_physical_run_20261014/analysis_cpu_progress/
+full_physical_run_20261014/delivery_final/
+full_physical_run_20261014/logs/
+full_physical_run_20261014/*.sqlite*
+full_physical_run_20261014/*.lock
+full_physical_run_20261014/*.pid
+full_physical_run_20261014/*_complete.json
+full_physical_run_20261014/status.json
+full_physical_run_20261014/run_manifest.json
+full_physical_run_20261014/supervisor_process.json
+full_physical_run_20261014/delivery_release.json
+full_physical_run_20261014/delivery_progress.json

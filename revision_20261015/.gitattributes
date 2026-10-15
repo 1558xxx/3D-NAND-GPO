@@ -1,0 +1,2 @@
+# Preserve the exact bytes recorded by CODE_PROVENANCE across Windows/Linux checkouts.
+* -text

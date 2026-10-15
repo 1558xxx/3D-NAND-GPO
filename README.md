@@ -1,5 +1,10 @@
 # Device-Condition-Informed Diffusion Parameter Transfer for 3-D NAND
 
+## Full physical-cohort revision code completed 2026-10-15
+
+The current full-cohort numerical runtime is in [`revision_20261015`](revision_20261015/README.md). It separately models two chips and retention/read disturbance, all P1-P7 states, three training seeds, and the retained full-target regularization grid. This directory includes the original generator implementation, classical-control dependencies, scheduler, metrics and audit code, exact configurations, dependency versions and input-manifest hashes. The existing top-level directories and result mapping below retain the earlier protocol archive. Raw measurement data, weights, full execution outputs and submission/reviewer documents are not published by this code update.
+
+
 This repository contains the code and processed numerical data associated with the manuscript **“Device-Condition-Informed Diffusion Parameter Transfer for Sparse Reconstruction of 3-D NAND Threshold-Voltage Distributions.”** The study investigates sparse reconstruction of threshold-voltage distributions for the seven programmed TLC states (P1–P7) using a device-condition-informed diffusion parameter prior and target-device adaptation.
 
 ## Repository contents

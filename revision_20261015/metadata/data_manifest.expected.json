@@ -1,0 +1,1074 @@
+{
+  "status": "complete",
+  "records": [
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 1,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 5632,
+      "total_curves": 14080,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 14080,
+      "min_curve_points": 16,
+      "max_curve_points": 25,
+      "file": "TH58TFT1T23BA8H_Bake_P1.npz",
+      "raw_mat_sha256": "f1cc88ff51aca96ea43965c86715bd21e176a58b97419b37fb594b2fbcde5598",
+      "data_sha256": "b9961b19a4a1098c22700c9bbf262628a2d60b8691b1b9d729403b2a3339ca67",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 2,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 5632,
+      "total_curves": 14080,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 14080,
+      "min_curve_points": 17,
+      "max_curve_points": 32,
+      "file": "TH58TFT1T23BA8H_Bake_P2.npz",
+      "raw_mat_sha256": "f1cc88ff51aca96ea43965c86715bd21e176a58b97419b37fb594b2fbcde5598",
+      "data_sha256": "744ff749ff8ba8588232ff0ed4099dba40323c1efcf581465b1e4d1d873829f9",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 3,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 5632,
+      "total_curves": 14080,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 14080,
+      "min_curve_points": 17,
+      "max_curve_points": 31,
+      "file": "TH58TFT1T23BA8H_Bake_P3.npz",
+      "raw_mat_sha256": "f1cc88ff51aca96ea43965c86715bd21e176a58b97419b37fb594b2fbcde5598",
+      "data_sha256": "7e7b9617e7c49702fd4a4ba557ccd2eb49c9d4f77c9d1b76811ba1ac39309e85",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 4,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 5632,
+      "total_curves": 14080,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 14080,
+      "min_curve_points": 17,
+      "max_curve_points": 33,
+      "file": "TH58TFT1T23BA8H_Bake_P4.npz",
+      "raw_mat_sha256": "f1cc88ff51aca96ea43965c86715bd21e176a58b97419b37fb594b2fbcde5598",
+      "data_sha256": "69840a940fce49a25f3714b5eea6169f710b405a0f2aa86923a969668eac40b9",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 5,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 5632,
+      "total_curves": 14080,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 14080,
+      "min_curve_points": 17,
+      "max_curve_points": 31,
+      "file": "TH58TFT1T23BA8H_Bake_P5.npz",
+      "raw_mat_sha256": "f1cc88ff51aca96ea43965c86715bd21e176a58b97419b37fb594b2fbcde5598",
+      "data_sha256": "77fe6cf7a30c848f26d76425a4bff6cfa78dfb22121b364e22d2b03d3006c2ea",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 6,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 5632,
+      "total_curves": 14080,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 14080,
+      "min_curve_points": 19,
+      "max_curve_points": 32,
+      "file": "TH58TFT1T23BA8H_Bake_P6.npz",
+      "raw_mat_sha256": "f1cc88ff51aca96ea43965c86715bd21e176a58b97419b37fb594b2fbcde5598",
+      "data_sha256": "1fdf10bc4cfa92d4e274b6c318ee6af1347b17bd6155b35a132fd9eaae94cad5",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 7,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 5632,
+      "total_curves": 14080,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 14080,
+      "min_curve_points": 23,
+      "max_curve_points": 40,
+      "file": "TH58TFT1T23BA8H_Bake_P7.npz",
+      "raw_mat_sha256": "f1cc88ff51aca96ea43965c86715bd21e176a58b97419b37fb594b2fbcde5598",
+      "data_sha256": "09a98449673ea84b305f8158d672955020776191d70db56a40ec22c46fe04751",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 1,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 8448,
+      "total_curves": 16896,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 16896,
+      "min_curve_points": 16,
+      "max_curve_points": 25,
+      "file": "TH58TFT1T23BA8H_Read_P1.npz",
+      "raw_mat_sha256": "e078750f334be7af5b521521faf29583f607eebabc3d5779a0dc657fdc9da362",
+      "data_sha256": "55a3f0d1c512923d097a4fe2b2b448a6cf932b8249b7b7aa0b3abe35464c2970",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 2,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 8448,
+      "total_curves": 16896,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 16896,
+      "min_curve_points": 17,
+      "max_curve_points": 32,
+      "file": "TH58TFT1T23BA8H_Read_P2.npz",
+      "raw_mat_sha256": "e078750f334be7af5b521521faf29583f607eebabc3d5779a0dc657fdc9da362",
+      "data_sha256": "134c36ccfb8d2aa67ed6ab3473b0ee63932c0daf37f94bc4b40323089cd7dcf0",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 3,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 8448,
+      "total_curves": 16896,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 16896,
+      "min_curve_points": 17,
+      "max_curve_points": 31,
+      "file": "TH58TFT1T23BA8H_Read_P3.npz",
+      "raw_mat_sha256": "e078750f334be7af5b521521faf29583f607eebabc3d5779a0dc657fdc9da362",
+      "data_sha256": "5e64d1f90e7532f0568780e7925cb8df1fc3f316903aa046791e196f4869b2fa",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 4,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 8448,
+      "total_curves": 16896,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 16896,
+      "min_curve_points": 17,
+      "max_curve_points": 30,
+      "file": "TH58TFT1T23BA8H_Read_P4.npz",
+      "raw_mat_sha256": "e078750f334be7af5b521521faf29583f607eebabc3d5779a0dc657fdc9da362",
+      "data_sha256": "d9d56194be15925d151e937f5e93f0e76ecbc6a26002c18c9313a8dd37d24ab7",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 5,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 8448,
+      "total_curves": 16896,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 16896,
+      "min_curve_points": 17,
+      "max_curve_points": 32,
+      "file": "TH58TFT1T23BA8H_Read_P5.npz",
+      "raw_mat_sha256": "e078750f334be7af5b521521faf29583f607eebabc3d5779a0dc657fdc9da362",
+      "data_sha256": "a9f6599c764636cdaef9098d2cc8ce5e634e5caa5ae1b3f8267e59376ca26739",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 6,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 8448,
+      "total_curves": 16896,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 16896,
+      "min_curve_points": 18,
+      "max_curve_points": 31,
+      "file": "TH58TFT1T23BA8H_Read_P6.npz",
+      "raw_mat_sha256": "e078750f334be7af5b521521faf29583f607eebabc3d5779a0dc657fdc9da362",
+      "data_sha256": "555d0dc2c9b43ae692463c56e5dc1eb03139f124b08cc40e3ec223db5387050d",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "TH58TFT1T23BA8H",
+      "vendor": "Kioxia CT",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 7,
+      "wordlines": 256,
+      "scan_count": 131,
+      "source_curves": 8448,
+      "target_curves": 8448,
+      "total_curves": 16896,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 16896,
+      "min_curve_points": 22,
+      "max_curve_points": 40,
+      "file": "TH58TFT1T23BA8H_Read_P7.npz",
+      "raw_mat_sha256": "e078750f334be7af5b521521faf29583f607eebabc3d5779a0dc657fdc9da362",
+      "data_sha256": "a7a682f77dc87c99fe8fe9e91537d909d3801b2d1738e1f1abad4a80644bb38e",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 1,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24519,
+      "target_curves": 16346,
+      "total_curves": 40865,
+      "excluded_short_curves": 55,
+      "all_candidate_curves": 40920,
+      "min_curve_points": 21,
+      "max_curve_points": 38,
+      "file": "MT29F1T08EEHAF_Bake_P1.npz",
+      "raw_mat_sha256": "1ae850091ee8bbb0bb139b1a1a67c0a02514f842eb71ddb98b6990a3a143b319",
+      "data_sha256": "4fc5a9bbfb323024707a191fcf3bd7e66855d36d2857669461f5773efe489e67",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 2,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24552,
+      "target_curves": 16368,
+      "total_curves": 40920,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 40920,
+      "min_curve_points": 23,
+      "max_curve_points": 37,
+      "file": "MT29F1T08EEHAF_Bake_P2.npz",
+      "raw_mat_sha256": "1ae850091ee8bbb0bb139b1a1a67c0a02514f842eb71ddb98b6990a3a143b319",
+      "data_sha256": "d9cc9fa553eab7438d92724ecc8c854b38d226d4b80f214fa261c3694a1bd904",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 3,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24519,
+      "target_curves": 16346,
+      "total_curves": 40865,
+      "excluded_short_curves": 55,
+      "all_candidate_curves": 40920,
+      "min_curve_points": 21,
+      "max_curve_points": 35,
+      "file": "MT29F1T08EEHAF_Bake_P3.npz",
+      "raw_mat_sha256": "1ae850091ee8bbb0bb139b1a1a67c0a02514f842eb71ddb98b6990a3a143b319",
+      "data_sha256": "84c1388ed83821ab655e3e2a556f2c4b2ef1e82e5762e4b520b98976789f56e5",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 4,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24519,
+      "target_curves": 16346,
+      "total_curves": 40865,
+      "excluded_short_curves": 55,
+      "all_candidate_curves": 40920,
+      "min_curve_points": 16,
+      "max_curve_points": 28,
+      "file": "MT29F1T08EEHAF_Bake_P4.npz",
+      "raw_mat_sha256": "1ae850091ee8bbb0bb139b1a1a67c0a02514f842eb71ddb98b6990a3a143b319",
+      "data_sha256": "206ddbfc523165af47ce7a8e8c3025574c2fbe83366d0559a2149f5a1d94622a",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 5,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24552,
+      "target_curves": 16368,
+      "total_curves": 40920,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 40920,
+      "min_curve_points": 16,
+      "max_curve_points": 30,
+      "file": "MT29F1T08EEHAF_Bake_P5.npz",
+      "raw_mat_sha256": "1ae850091ee8bbb0bb139b1a1a67c0a02514f842eb71ddb98b6990a3a143b319",
+      "data_sha256": "f2b06cd1f66c43f2713cad26716afcafa065bb0b55b033a3ee66fcdd6558e51d",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 6,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24519,
+      "target_curves": 16346,
+      "total_curves": 40865,
+      "excluded_short_curves": 55,
+      "all_candidate_curves": 40920,
+      "min_curve_points": 18,
+      "max_curve_points": 35,
+      "file": "MT29F1T08EEHAF_Bake_P6.npz",
+      "raw_mat_sha256": "1ae850091ee8bbb0bb139b1a1a67c0a02514f842eb71ddb98b6990a3a143b319",
+      "data_sha256": "69a4126aa826997c626de1f2623160b7f694a94725252c706a2b8e303fb6a1f8",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Bake",
+      "unit": "equivalent_minutes",
+      "state": 7,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24552,
+      "target_curves": 16368,
+      "total_curves": 40920,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 40920,
+      "min_curve_points": 22,
+      "max_curve_points": 36,
+      "file": "MT29F1T08EEHAF_Bake_P7.npz",
+      "raw_mat_sha256": "1ae850091ee8bbb0bb139b1a1a67c0a02514f842eb71ddb98b6990a3a143b319",
+      "data_sha256": "ebbad19788add2dd173ad4dad399e66f8dd1226ee7f3ed13a57d56ba767f1609",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5
+      ],
+      "stress_values": [
+        1,
+        10,
+        100,
+        1000,
+        10000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 1,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24519,
+      "target_curves": 24519,
+      "total_curves": 49038,
+      "excluded_short_curves": 66,
+      "all_candidate_curves": 49104,
+      "min_curve_points": 22,
+      "max_curve_points": 43,
+      "file": "MT29F1T08EEHAF_Read_P1.npz",
+      "raw_mat_sha256": "eff4fffb141bc77e94bf006e6fabfa79eea77bd740f8f802c04db0ea1624dfd2",
+      "data_sha256": "db354971fb5500a1b444b2b0019feb948cc2c33680bf02e05d230654d9403cc0",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 2,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24552,
+      "target_curves": 24552,
+      "total_curves": 49104,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 49104,
+      "min_curve_points": 21,
+      "max_curve_points": 38,
+      "file": "MT29F1T08EEHAF_Read_P2.npz",
+      "raw_mat_sha256": "eff4fffb141bc77e94bf006e6fabfa79eea77bd740f8f802c04db0ea1624dfd2",
+      "data_sha256": "45d9e37bb2de2e8c4930f2d6194f71468715f1368c51978220a46a8f821cc7b9",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 3,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24519,
+      "target_curves": 24519,
+      "total_curves": 49038,
+      "excluded_short_curves": 66,
+      "all_candidate_curves": 49104,
+      "min_curve_points": 21,
+      "max_curve_points": 35,
+      "file": "MT29F1T08EEHAF_Read_P3.npz",
+      "raw_mat_sha256": "eff4fffb141bc77e94bf006e6fabfa79eea77bd740f8f802c04db0ea1624dfd2",
+      "data_sha256": "5ed565fb817fd93e1f66289e24aec035bb10c559045b897e3fb45e29ee349156",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 4,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24519,
+      "target_curves": 24519,
+      "total_curves": 49038,
+      "excluded_short_curves": 66,
+      "all_candidate_curves": 49104,
+      "min_curve_points": 16,
+      "max_curve_points": 29,
+      "file": "MT29F1T08EEHAF_Read_P4.npz",
+      "raw_mat_sha256": "eff4fffb141bc77e94bf006e6fabfa79eea77bd740f8f802c04db0ea1624dfd2",
+      "data_sha256": "2d5e569b7b6f10d6615e3ed59c72377bdcf0fd3e99e3a9aa94af9118047c1602",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 5,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24552,
+      "target_curves": 24552,
+      "total_curves": 49104,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 49104,
+      "min_curve_points": 16,
+      "max_curve_points": 31,
+      "file": "MT29F1T08EEHAF_Read_P5.npz",
+      "raw_mat_sha256": "eff4fffb141bc77e94bf006e6fabfa79eea77bd740f8f802c04db0ea1624dfd2",
+      "data_sha256": "5803fab60988dffe153cb98ec6df22579f54471d885c3d098d23c1b630ce4389",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 6,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24519,
+      "target_curves": 24519,
+      "total_curves": 49038,
+      "excluded_short_curves": 66,
+      "all_candidate_curves": 49104,
+      "min_curve_points": 18,
+      "max_curve_points": 34,
+      "file": "MT29F1T08EEHAF_Read_P6.npz",
+      "raw_mat_sha256": "eff4fffb141bc77e94bf006e6fabfa79eea77bd740f8f802c04db0ea1624dfd2",
+      "data_sha256": "8997c12200c654da7dbe7f46d2b05ce24124e400687392dcd6a2b2e07631725a",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    },
+    {
+      "chip": "MT29F1T08EEHAF",
+      "vendor": "Micron FG",
+      "experiment": "Read",
+      "unit": "read_repetitions",
+      "state": 7,
+      "wordlines": 744,
+      "scan_count": 164,
+      "source_curves": 24552,
+      "target_curves": 24552,
+      "total_curves": 49104,
+      "excluded_short_curves": 0,
+      "all_candidate_curves": 49104,
+      "min_curve_points": 22,
+      "max_curve_points": 39,
+      "file": "MT29F1T08EEHAF_Read_P7.npz",
+      "raw_mat_sha256": "eff4fffb141bc77e94bf006e6fabfa79eea77bd740f8f802c04db0ea1624dfd2",
+      "data_sha256": "1be1aa5b94d4c8aa828aafb94d353131f402ebaffa087dd9e1e1d5c52ff00dcb",
+      "source_labels": [
+        1,
+        2,
+        3
+      ],
+      "target_labels": [
+        4,
+        5,
+        6
+      ],
+      "stress_values": [
+        1,
+        1000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "preprocessing": "all valid positive-count curves; no cohort subsampling; min12 is the existing protocol rule",
+      "coordinate": "original within-WL worksheet positions including separator gaps; not absolute voltage"
+    }
+  ],
+  "source_curves": 461736,
+  "target_curves": 384780,
+  "family_separation": true,
+  "zero_counts_kept_in_raw": true,
+  "baseline_shared_between_families": "first-level acquisition is reused; independent target domains are evaluated separately"
+}

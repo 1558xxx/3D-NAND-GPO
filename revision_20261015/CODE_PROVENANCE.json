@@ -1,0 +1,256 @@
+{
+  "scope": "retained_reviews_20261014",
+  "files": [
+    {
+      "path": "full_physical_run_20261014/prepare_full_data.py",
+      "source_project_path": "full_physical_run_20261014/prepare_full_data.py",
+      "sha256": "50b8ce79eea78a54b62a175dad42b7c5e1a8ebac90920e743df3b7a1a16a8cd5",
+      "bytes": 5800
+    },
+    {
+      "path": "full_physical_run_20261014/full_common.py",
+      "source_project_path": "full_physical_run_20261014/full_common.py",
+      "sha256": "3f79d45476a22006b8ad2a614d4eadeb639d6e6fef79df32dbd512761faa1d6e",
+      "bytes": 6969
+    },
+    {
+      "path": "full_physical_run_20261014/gpu_ops.py",
+      "source_project_path": "full_physical_run_20261014/gpu_ops.py",
+      "sha256": "1404853e681c1db42eeb3a3521db5f763a56d975f2c444f8edfb6cceabcaa3d8",
+      "bytes": 5370
+    },
+    {
+      "path": "full_physical_run_20261014/generative_models.py",
+      "source_project_path": "full_physical_run_20261014/generative_models.py",
+      "sha256": "4882b101a187c690375c92c49a24f035216282b42489cced854883551592c384",
+      "bytes": 6235
+    },
+    {
+      "path": "full_physical_run_20261014/gpu_worker.py",
+      "source_project_path": "full_physical_run_20261014/gpu_worker.py",
+      "sha256": "62c4b1335d1377b0f39f7aa3ba259577fb3bef400b7e0d24c700de4183897291",
+      "bytes": 11147
+    },
+    {
+      "path": "full_physical_run_20261014/classical_worker.py",
+      "source_project_path": "full_physical_run_20261014/classical_worker.py",
+      "sha256": "ecc51f996ee323f9ad7f3632bf510d695417c8ee50a9923b1a3f03475d2a0f14",
+      "bytes": 2371
+    },
+    {
+      "path": "full_physical_run_20261014/supervisor.py",
+      "source_project_path": "full_physical_run_20261014/supervisor.py",
+      "sha256": "8635163a47e3a4b6bcd83f881a9f7f619442deab35e8b0f944e462222dab41d7",
+      "bytes": 10368
+    },
+    {
+      "path": "full_physical_run_20261014/queue_scope.py",
+      "source_project_path": "full_physical_run_20261014/queue_scope.py",
+      "sha256": "c30a7fc6a5cc33cd8407f830373ee454fcb68caef4aaf8f8e3d7d0c57bdd9dba",
+      "bytes": 551
+    },
+    {
+      "path": "full_physical_run_20261014/cpu_retained_preanalysis.py",
+      "source_project_path": "full_physical_run_20261014/cpu_retained_preanalysis.py",
+      "sha256": "f3ea18f3c966a705921ac85a3895d948ee398cbd012ae4a345cffc341d52c636",
+      "bytes": 3199
+    },
+    {
+      "path": "full_physical_run_20261014/finalize_full_run.py",
+      "source_project_path": "full_physical_run_20261014/finalize_full_run.py",
+      "sha256": "34401f13d78859868528becce4b68c3b1b405b1e4efa168d98c348c7d4c18d05",
+      "bytes": 18788
+    },
+    {
+      "path": "full_physical_run_20261014/finalize_retained_run.py",
+      "source_project_path": "full_physical_run_20261014/finalize_retained_run.py",
+      "sha256": "445b1c81e32de5327e36efa193108dd7e9f8c4f37e56500a179a3a296b9ec177",
+      "bytes": 11557
+    },
+    {
+      "path": "full_physical_run_20261014/generator_cost_retained.py",
+      "source_project_path": "full_physical_run_20261014/generator_cost_retained.py",
+      "sha256": "1fc9ed955b33e3626e42aa8289ce884e4786742a2340b6bcd03a26ee68a8bd89",
+      "bytes": 2385
+    },
+    {
+      "path": "full_physical_run_20261014/delivery_statistics.py",
+      "source_project_path": "full_physical_run_20261014/delivery_statistics.py",
+      "sha256": "dd523935857da417bdf5e69ca9893a43d03cc3693b4f2bb463c36687b0a610fb",
+      "bytes": 12144
+    },
+    {
+      "path": "full_physical_run_20261014/monitor_audit.py",
+      "source_project_path": "full_physical_run_20261014/monitor_audit.py",
+      "sha256": "549a1f312ebef73a3a01158acff601709889199c7f47c4cd46706123e98aee68",
+      "bytes": 5477
+    },
+    {
+      "path": "src/run_loss_controls.py",
+      "source_project_path": "src/run_loss_controls.py",
+      "sha256": "313bb99cdc3e81736ab0544b130011e1ce15d3329e9d30fd2c2d07b633c4c8d3",
+      "bytes": 5404
+    },
+    {
+      "path": "src/revision_stats.py",
+      "source_project_path": "src/revision_stats.py",
+      "sha256": "36a1a08a2382291e2407fad7bd263da6d2510cd9b940e09ba51a5a9307d9a720",
+      "bytes": 3970
+    },
+    {
+      "path": "src/metrics.py",
+      "source_project_path": "src/metrics.py",
+      "sha256": "1630d41540ff927c6025f4a249fa409225abc1e632d9c3846f7dc34a181021ee",
+      "bytes": 1777
+    },
+    {
+      "path": "src/protocols.py",
+      "source_project_path": "src/protocols.py",
+      "sha256": "348009cd46d29d100544036a079330532f9a9bf11a0e1e81f3f94b3b802439dd",
+      "bytes": 1649
+    },
+    {
+      "path": "src/data_io.py",
+      "source_project_path": "src/data_io.py",
+      "sha256": "79c9834a99aafbe8f8d7543a11691eebfeeeaf94f6f6c60569fa42a0bf57fb56",
+      "bytes": 5646
+    },
+    {
+      "path": "src/common.py",
+      "source_project_path": "src/common.py",
+      "sha256": "a3423dd471fe1c4876f454a04f4e66ec555d20552f8ceb84a96e1b1e10036d15",
+      "bytes": 1538
+    },
+    {
+      "path": "src/models.py",
+      "source_project_path": "src/models.py",
+      "sha256": "6d894c4b8d70f2729bf99d640fd5f8b03af2fecf9c4140969cd86b1e0cc32239",
+      "bytes": 5855
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/denoising_diffusion_pytorch/__init__.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/denoising_diffusion_pytorch/__init__.py",
+      "sha256": "ff51d78ecd7a71b72173b11055925ac18c997ea89b57a1a895616289d60ca113",
+      "bytes": 196
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py",
+      "sha256": "f174f1a56cac00c5564b9a0c9832f154996d7227833c4d5df8fb0aa308314f03",
+      "bytes": 42157
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/denoising_diffusion_pytorch/diffusion1DfromZH.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/denoising_diffusion_pytorch/diffusion1DfromZH.py",
+      "sha256": "5cc9edf7d3a47d3d579bbcae1d2177556ee6ca2c39cbff5408ba54b95ea008d9",
+      "bytes": 3475
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/denoising_diffusion_pytorch/version.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/denoising_diffusion_pytorch/version.py",
+      "sha256": "9af43b9c9c1cc0491bc83f4e6124df10f7569eb5307e011fea491b618ff32ea5",
+      "bytes": 22
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/TimeTransformer/__init__.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/TimeTransformer/__init__.py",
+      "sha256": "c04f7e333b1393fb00d0bc95730b478ed4cb07c4d70fdd738158d43334f51193",
+      "bytes": 93
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/TimeTransformer/causal_convolution_layer.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/TimeTransformer/causal_convolution_layer.py",
+      "sha256": "03f8822294b18c9e624660cd2421da370d7447f82cc27848c800ba4668e44db7",
+      "bytes": 1149
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/TimeTransformer/decoder.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/TimeTransformer/decoder.py",
+      "sha256": "2517731bb8355b138211ab6d6a97c8952ad56e5cc58fa6a913b24e1e05b708ad",
+      "bytes": 3604
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/TimeTransformer/encoder.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/TimeTransformer/encoder.py",
+      "sha256": "4ef708b9d58ebe817cbbe6b9c806875f01aee189d9ad562bfa090fdf88a76015",
+      "bytes": 7889
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/TimeTransformer/loss.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/TimeTransformer/loss.py",
+      "sha256": "59d2d292891b5f4adcc404c4df8ed5157dc74f30fe1744f8d83d75c39e815293",
+      "bytes": 1514
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/TimeTransformer/multiHeadAttention.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/TimeTransformer/multiHeadAttention.py",
+      "sha256": "8662f8753994f96deece0153bb11de5dd4362134cdfa37453beda1677944f208",
+      "bytes": 15401
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/TimeTransformer/positionwiseFeedForward.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/TimeTransformer/positionwiseFeedForward.py",
+      "sha256": "37c61ec50d4b157319237f53825c70f7b5ef3b347caff85eeca23fa80c4704f5",
+      "bytes": 1323
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/TimeTransformer/transformer.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/TimeTransformer/transformer.py",
+      "sha256": "d128d772404db3b3fe4d8bbe91e9755635e842b89925acf0a59ebea3aa9511e2",
+      "bytes": 4930
+    },
+    {
+      "path": "paper_revision/source_reference/original_generator/TimeTransformer/utils.py",
+      "source_project_path": "paper_revision/source_reference/original_generator/TimeTransformer/utils.py",
+      "sha256": "3627405cf6212dad31297ad0c7dc171dad7653a4922413a0b4da4c08c61a2eef",
+      "bytes": 2681
+    },
+    {
+      "path": "full_physical_run_20261014/config.json",
+      "source_project_path": "full_physical_run_20261014/config.json",
+      "sha256": "77026bbffc7520dbce25ff9b44018db7ae97b2b5f8a194635f91fd15fb1dc053",
+      "bytes": 1713
+    },
+    {
+      "path": "full_physical_run_20261014/scope_profile.json",
+      "source_project_path": "full_physical_run_20261014/scope_profile.json",
+      "sha256": "6739157ea58be3d23228383a027551ef3e3ec72bb9f78541915aef2f39ab2d7b",
+      "bytes": 1758
+    },
+    {
+      "path": "full_physical_run_20261014/监督与完成标准.md",
+      "source_project_path": "full_physical_run_20261014/监督与完成标准.md",
+      "sha256": "89f0ba9343f537eded20666959d272f81205c480b61a943ccd8acb22bdc18c7b",
+      "bytes": 3048
+    },
+    {
+      "path": "metadata/data_manifest.expected.json",
+      "source_project_path": "full_physical_run_20261014/data/manifest.json",
+      "sha256": "f0082284ba90aadda5c1d97a3ec43aac9a94145b5a341dfd2d0d7ceae9ecee9d",
+      "bytes": 32382
+    },
+    {
+      "path": "requirements_cpu.txt",
+      "source_project_path": "full_physical_run_20261014/delivery_final/reproduction/requirements_cpu.txt",
+      "sha256": "0b58e35a3c400daa367ed1964ccd363386f2e638038819e8ff1c19b8dd9428b0",
+      "bytes": 1006
+    },
+    {
+      "path": "requirements_gpu.txt",
+      "source_project_path": "full_physical_run_20261014/delivery_final/reproduction/requirements_gpu.txt",
+      "sha256": "f6c460657fb9e097480cdfa14d682714e5c7ba0fcdf7f352c40f829cacec8d8a",
+      "bytes": 1008
+    },
+    {
+      "path": "environment_versions.json",
+      "source_project_path": "full_physical_run_20261014/delivery_final/reproduction/environment_versions.json",
+      "sha256": "c092f83881e49ca99fba7ac4d619d86c9413354b30dabff65b92d009431a442e",
+      "bytes": 10344
+    }
+  ],
+  "executable_sources_copied_byte_for_byte": true,
+  "raw_data_not_published": true,
+  "weights_not_published": true,
+  "results_not_published": true,
+  "document_or_reviewer_material_not_published": true
+}

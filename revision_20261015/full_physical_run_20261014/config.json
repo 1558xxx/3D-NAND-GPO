@@ -1,0 +1,68 @@
+{
+  "scope": "Full-cohort main and lambda sensitivity for retained reviewer requests",
+  "chips": [
+    "TH58TFT1T23BA8H",
+    "MT29F1T08EEHAF"
+  ],
+  "groups": [
+    "Bake",
+    "Read"
+  ],
+  "states": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "budgets": [
+    5,
+    7,
+    9
+  ],
+  "gpu_batch": 4096,
+  "cpu_chunk": 128,
+  "generator_batch": 16,
+  "sampling_batch": 16,
+  "generator_epochs": 2,
+  "generator_lr": 8e-05,
+  "source_steps": 140,
+  "target_steps": 140,
+  "lbfgs_lr": 0.8,
+  "bootstrap": 2000,
+  "cpu_workers": 3,
+  "gpu_workers": 1,
+  "source_sizes": [
+    50,
+    150,
+    "half",
+    "full"
+  ],
+  "timestep_variants": [
+    "T10",
+    "T50_native",
+    "T50_matched"
+  ],
+  "lambda_values": [
+    0,
+    1e-06,
+    0.0001,
+    0.01
+  ],
+  "no_target_hyperparameter_selection": true,
+  "independent_chip_replication_not_zero_shot": true,
+  "architecture": "original Transformer3, width16, embedding8, four encoder layers, velocity objective; vocabulary follows physical WL count",
+  "generation_exposure": "two complete source passes; full source dataset is actually visited, not only100 batch1 updates",
+  "comparability": "fixed computation batching for neural methods; no source/target family aggregation; paired metrics on identical coordinates",
+  "conditional_limits": "source size ablates generator learning set while holding fitted per-curve representations fixed; short curves excluded by unchanged min12 rule and counts reported",
+  "scope_profile": "retained_reviews_20261014",
+  "all_original_ablations_required": false,
+  "full_target_main_and_lambda": true
+}
